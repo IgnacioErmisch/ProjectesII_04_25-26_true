@@ -77,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             horizontal = 0f;
+            isMoving = false;
+
         }
 
         bool isCurrentlyMoving = isGrounded && isMoving && Mathf.Abs(currentSpeed) > 0.1f;
@@ -114,6 +116,8 @@ public class PlayerMovement : MonoBehaviour
             float finalX = currentSpeed + externalVelocity.x;
             float finalY = rb2D.linearVelocity.y + externalVelocity.y;
             rb2D.linearVelocity = new Vector2(finalX, finalY);
+            isMoving = false;
+
         }
 
         externalVelocity = Vector2.zero;
