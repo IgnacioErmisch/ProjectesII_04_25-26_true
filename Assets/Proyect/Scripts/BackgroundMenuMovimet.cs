@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class BackgroundMenuMovimet : MonoBehaviour
 {
     [SerializeField] private RectTransform[] rectTransform;
     [SerializeField] private GameObject[] backgrounds;
+    [SerializeField] private GameObject[] firstButtonPerPage; 
     [SerializeField] private float transitionDuration = 0.5f;
 
     private int actualBackground = 0;
@@ -86,11 +88,19 @@ public class BackgroundMenuMovimet : MonoBehaviour
 
     }
 
+    private void SetFirstSelected(int pageIndex)
+    {
+        if (firstButtonPerPage == null || pageIndex >= firstButtonPerPage.Length) 
+            return;
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButtonPerPage[pageIndex]);
+    }
     public void LeftBackground()
     {
         if (isTransitioning || actualBackground == 0) return;
         actualBackground--;
         StartCoroutine(TransitionTo(actualBackground));
+        SetFirstSelected(actualBackground);
     }
 
     public void RightBackground()
@@ -98,5 +108,6 @@ public class BackgroundMenuMovimet : MonoBehaviour
         if (isTransitioning || actualBackground == backgrounds.Length - 1) return;
         actualBackground++;
         StartCoroutine(TransitionTo(actualBackground));
+        SetFirstSelected(actualBackground);
     }
 }
