@@ -30,8 +30,8 @@ TagManager:
   - Enemy
   - Ground
   - smallClone
-  - 
-  - 
+  - blackEnemy
+  - bigClone
   - 
   - 
   - 

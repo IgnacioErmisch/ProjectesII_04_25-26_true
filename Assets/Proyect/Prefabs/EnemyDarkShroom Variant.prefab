@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyDarkShroom Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1377071508763594598, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1427529049792751227, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -30,23 +34,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242407336774715265, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: chaseSpeed
-      value: 3.41
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2242407336774715265, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: attackRange
-      value: 0.74
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2242407336774715265, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: detectionRadius
       value: 8.75
       objectReference: {fileID: 0}
     - target: {fileID: 2643562710328642762, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.6389575
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643562710328642762, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.6389575
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643562710328642762, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.8194788
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643562710328642762, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.01
+      value: -37.1307
       objectReference: {fileID: 0}
     - target: {fileID: 2643562710328642762, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.88
+      value: 9.7593
       objectReference: {fileID: 0}
     - target: {fileID: 2643562710328642762, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -78,6 +94,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2643562710328642762, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369400868110152766, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

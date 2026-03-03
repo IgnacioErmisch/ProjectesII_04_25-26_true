@@ -5001,7 +5001,7 @@ GameObject:
   - component: {fileID: 8539441089575653577}
   - component: {fileID: 425521854932723035}
   - component: {fileID: 5994728936323168038}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: BigClone
   m_TagString: BigClone
   m_Icon: {fileID: 0}
