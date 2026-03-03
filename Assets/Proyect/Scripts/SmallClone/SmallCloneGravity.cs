@@ -69,10 +69,6 @@ public class CloneGravity : MonoBehaviour
 
         rb.gravityScale = -rb.gravityScale;
 
-   
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, -rb.linearVelocity.y);
-
-  
         if (Mathf.Abs(rb.linearVelocity.y) < 0.5f)
         {
             float impulseDirection = rb.gravityScale < 0 ? 1f : -1f;
