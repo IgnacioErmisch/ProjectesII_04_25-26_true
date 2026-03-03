@@ -124,6 +124,17 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8217135377386519259, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
   m_PrefabInstance: {fileID: 1567183206}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &146894546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3133268852354138204, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
+  m_PrefabInstance: {fileID: 1591480020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d051da6c5b5677d439cf8a3ded1bb8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &201457036 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8045416976597361143, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
@@ -11917,17 +11928,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &353023889 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8628478302887266359, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
-  m_PrefabInstance: {fileID: 1591480020}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d051da6c5b5677d439cf8a3ded1bb8f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &357030934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14114,17 +14114,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1340434647 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8350903152538821813, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
-  m_PrefabInstance: {fileID: 1591480020}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1360819600
 GameObject:
   m_ObjectHideFlags: 0
@@ -14423,7 +14412,7 @@ PrefabInstance:
     - target: {fileID: 4503241564842466741, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: switchInterface
       value: 
-      objectReference: {fileID: 353023889}
+      objectReference: {fileID: 146894546}
     - target: {fileID: 6595192762629193903, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: movement
       value: 
@@ -14459,7 +14448,7 @@ PrefabInstance:
     - target: {fileID: 7564787060841960555, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: switchInterface
       value: 
-      objectReference: {fileID: 353023889}
+      objectReference: {fileID: 146894546}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14733,7 +14722,7 @@ PrefabInstance:
     - target: {fileID: 8628478302887266359, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: BigClone
       value: 
-      objectReference: {fileID: 1340434647}
+      objectReference: {fileID: 0}
     - target: {fileID: 8628478302887266359, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: gameManager
       value: 
