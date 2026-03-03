@@ -146976,6 +146976,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1773470557}
+    - target: {fileID: 2748987506627591843, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePauseMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 3218099744113761063, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -147168,17 +147172,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1768985552}
   m_SourcePrefab: {fileID: 100100000, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
---- !u!114 &1135488403 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8628478302887266359, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
+--- !u!1 &1135488403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 716139117256022569, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
   m_PrefabInstance: {fileID: 1135488402}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d051da6c5b5677d439cf8a3ded1bb8f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1135488404 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4817410540603659738, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
@@ -147201,6 +147199,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1135488406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4959172388777595472, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
+  m_PrefabInstance: {fileID: 1135488402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148577148
 GameObject:
   m_ObjectHideFlags: 0
@@ -148305,6 +148308,14 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1768985551}
+    - target: {fileID: 5153659588683725641, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 1135488403}
+    - target: {fileID: 5153659588683725641, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}
+      propertyPath: showBindsButton
+      value: 
+      objectReference: {fileID: 1135488406}
     - target: {fileID: 7327970344634949861, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.167915
@@ -148456,7 +148467,7 @@ PrefabInstance:
     - target: {fileID: 4503241564842466741, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: switchInterface
       value: 
-      objectReference: {fileID: 1135488403}
+      objectReference: {fileID: 0}
     - target: {fileID: 6595192762629193903, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: jumpForce
       value: 11
@@ -148468,7 +148479,7 @@ PrefabInstance:
     - target: {fileID: 7564787060841960555, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: switchInterface
       value: 
-      objectReference: {fileID: 1135488403}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

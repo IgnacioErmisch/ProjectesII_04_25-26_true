@@ -23155,11 +23155,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 683014058}
     - target: {fileID: 5153659588683725641, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}
-      propertyPath: bindsButton
+      propertyPath: backButton
       value: 
       objectReference: {fileID: 979646600}
     - target: {fileID: 5153659588683725641, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}
-      propertyPath: firstButton
+      propertyPath: showBindsButton
       value: 
       objectReference: {fileID: 1563711742}
     - target: {fileID: 7327970344634949861, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}

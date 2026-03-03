@@ -782,6 +782,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &257532001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 716139117256022569, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
+  m_PrefabInstance: {fileID: 1822070693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &257532002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4959172388777595472, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
+  m_PrefabInstance: {fileID: 1822070693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &299810216
 GameObject:
   m_ObjectHideFlags: 0
@@ -27138,7 +27148,7 @@ PrefabInstance:
       objectReference: {fileID: 1828153083}
     - target: {fileID: 2748987506627591843, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Return
+      value: TogglePauseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 2995961432192028365, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -27150,7 +27160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218099744113761063, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4586615158342418971, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -27509,6 +27519,14 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1822070695}
+    - target: {fileID: 5153659588683725641, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}
+      propertyPath: backButton
+      value: 
+      objectReference: {fileID: 257532001}
+    - target: {fileID: 5153659588683725641, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}
+      propertyPath: showBindsButton
+      value: 
+      objectReference: {fileID: 257532002}
     - target: {fileID: 7327970344634949861, guid: a6b10f2eb7868b04bba0efc54742a5b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.167915

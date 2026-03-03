@@ -6,8 +6,8 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject bindsMenu;
-    [SerializeField] private GameObject firstButton;
-    [SerializeField] private GameObject bindsButton;
+    [SerializeField] private GameObject showBindsButton;
+    [SerializeField] private GameObject backButton;
     private Controller inputActions;
 
     private void Awake()
@@ -51,7 +51,7 @@ public class MenuManager : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(firstButton);
+            EventSystem.current.SetSelectedGameObject(showBindsButton);
             Time.timeScale = 0;
         }
     }
@@ -66,13 +66,13 @@ public class MenuManager : MonoBehaviour
     {
         bindsMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(bindsButton);
+        EventSystem.current.SetSelectedGameObject(backButton);
     }
 
     public void CloseBindsMenu()
     {
         bindsMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstButton);
+        EventSystem.current.SetSelectedGameObject(showBindsButton);
     }
 }
