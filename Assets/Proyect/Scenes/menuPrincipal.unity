@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 723935537}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &25907444
@@ -3423,7 +3423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelSettings: {fileID: 827384670}
-  primerBotonMenuPrincipal: {fileID: 1830300702}
+  botonSettings: {fileID: 1830300702}
+  botonPlay: {fileID: 723935537}
   sfx: {fileID: 530510931}
 --- !u!1 &2016697221
 GameObject:

@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class BackgroundMenuMovimet : MonoBehaviour
 {
     [SerializeField] private RectTransform[] rectTransform;
     [SerializeField] private GameObject[] backgrounds;
-    [SerializeField] private GameObject[] firstButtonPerPage; 
+    [SerializeField] private GameObject[] firstButtonPerPage;
+    [SerializeField] private GameObject firstLevel; 
     [SerializeField] private float transitionDuration = 0.5f;
 
     private int actualBackground = 0;
@@ -31,12 +33,25 @@ public class BackgroundMenuMovimet : MonoBehaviour
     }
     void Start()
     {
+
         for (int i = 0; i < backgrounds.Length; i++)
         {
             rectTransform[i].anchoredPosition = Vector2.right * distance * i;
         }
-    }
 
+        if (Gamepad.all.Count > 0)
+        {
+            StartCoroutine(SelectFirstLevelDelayed());
+        }
+
+    }
+    private IEnumerator SelectFirstLevelDelayed()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame(); 
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstLevel);
+    }
     private void Update()
     {
         if (inputActions.Gameplay.LevelSelectorLeft.IsPressed())
@@ -92,8 +107,12 @@ public class BackgroundMenuMovimet : MonoBehaviour
     {
         if (firstButtonPerPage == null || pageIndex >= firstButtonPerPage.Length) 
             return;
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstButtonPerPage[pageIndex]);
+        if (Gamepad.all.Count > 0)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(firstButtonPerPage[pageIndex]);
+        }
+            
     }
     public void LeftBackground()
     {
