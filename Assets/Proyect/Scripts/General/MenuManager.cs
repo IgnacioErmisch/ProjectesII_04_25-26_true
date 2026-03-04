@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
@@ -50,8 +51,12 @@ public class MenuManager : MonoBehaviour
         else
         {
             pauseMenu.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(showBindsButton);
+            if (Gamepad.all.Count > 0)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(showBindsButton);
+            }
+               
             Time.timeScale = 0;
         }
     }
@@ -65,14 +70,22 @@ public class MenuManager : MonoBehaviour
     public void OpenBindsMenu()
     {
         bindsMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(backButton);
+        if (Gamepad.all.Count > 0)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(backButton);
+        }
+           
     }
 
     public void CloseBindsMenu()
     {
         bindsMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(showBindsButton);
+        if (Gamepad.all.Count > 0)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(showBindsButton);
+        }
+          
     }
 }
