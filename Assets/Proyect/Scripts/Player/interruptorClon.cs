@@ -12,6 +12,7 @@ public class BreakableZone : MonoBehaviour
         {
             antiCloneZone.GetComponent<CapsuleCollider2D>().enabled = false;
             antiCloneZone.GetComponentInChildren<ParticleSystem>().Stop();
+            antiCloneZone.GetComponentInChildren<ParticleSystem>().Clear();
         }
 
 
