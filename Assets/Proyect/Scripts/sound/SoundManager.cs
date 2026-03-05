@@ -88,7 +88,6 @@ public class SoundManager : MonoBehaviour
         ConfigureSliders();
     }
 
- 
     private void ApplyMusicVolume(float value)
     {
         float volume = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1)) * 20;

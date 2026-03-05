@@ -10,11 +10,15 @@ public class menuScene : MonoBehaviour
     public GameObject botonSettings;
     public GameObject botonPlay;
     public GameObject sfx;
+    public Slider musicSlider;
+    public Slider sfxSlider;
 
     void Start()
     {
-        Slider musicSlider = GameObject.Find("Musica")?.GetComponent<Slider>();
-        Slider sfxSlider = GameObject.Find("SFX")?.GetComponent<Slider>();
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.AssignSliders(musicSlider, sfxSlider);
+        }
 
         if (Gamepad.all.Count > 0)
         {
