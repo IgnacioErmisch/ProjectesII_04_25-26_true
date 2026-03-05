@@ -203,6 +203,9 @@ public class PlayerMovement : MonoBehaviour
         if (facingRight == shouldFaceRight) return;
         facingRight = shouldFaceRight;
         spriteRenderer.flipX = !facingRight;
+        cloneSpawnerPoint.localPosition = new Vector3(-cloneSpawnerPoint.localPosition.x, cloneSpawnerPoint.localPosition.y, cloneSpawnerPoint.localPosition.z);
+        cloneSpawnerPointUp.localPosition = new Vector3(-cloneSpawnerPointUp.localPosition.x, cloneSpawnerPointUp.localPosition.y, cloneSpawnerPointUp.localPosition.z);
+        cloneSpawnerPointSecond.localPosition = new Vector3(-cloneSpawnerPointSecond.localPosition.x, cloneSpawnerPointSecond.localPosition.y, cloneSpawnerPointSecond.localPosition.z);
     }
 
     private bool CheckGround() => Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -224,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Flip()
+    public void Flip()
     {
         facingRight = !facingRight;
         spriteRenderer.flipX = !facingRight;
