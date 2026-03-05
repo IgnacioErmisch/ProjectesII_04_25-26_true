@@ -3426,6 +3426,8 @@ MonoBehaviour:
   botonSettings: {fileID: 1830300702}
   botonPlay: {fileID: 723935537}
   sfx: {fileID: 530510931}
+  musicSlider: {fileID: 193870485}
+  sfxSlider: {fileID: 530510933}
 --- !u!1 &2016697221
 GameObject:
   m_ObjectHideFlags: 0
