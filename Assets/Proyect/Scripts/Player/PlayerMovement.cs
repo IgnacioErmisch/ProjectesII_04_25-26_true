@@ -174,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (currentSpeed > 0.1f && !facingRight) Flip();
         else if (currentSpeed < -0.1f && facingRight) Flip();
+        
     }
 
     public void SetExternalVelocity(Vector2 velocity) => externalVelocity += velocity;

@@ -5276,6 +5276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint: {fileID: 857880112882608188}
+  bigCloneSpriteRenderer: {fileID: 8790202237903686020}
 --- !u!255 &857880112882608188
 FixedJoint2D:
   m_ObjectHideFlags: 0
