@@ -36,6 +36,8 @@ public class BigCloneController : MonoBehaviour
     private WallDestructor wallDestructor;
     [SerializeField] private Transform canvas;
 
+    [SerializeField] private RideBigClone rideBigClone;
+
 
     private void Awake()
     {
@@ -44,7 +46,11 @@ public class BigCloneController : MonoBehaviour
         CinemachineSingleton.Instance.SetBigClone(transformBigClone);
         GameManager.Instance.SetBigCloneEnergy(energyImage);
         GameManager.Instance.SetBigCloneCanvas(canvas);
+    }
 
+    private void OnDestroy()
+    {
+        rideBigClone.DetachPlayer();
     }
 
     private void InitializeComponents()

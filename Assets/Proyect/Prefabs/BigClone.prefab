@@ -5001,6 +5001,9 @@ GameObject:
   - component: {fileID: 8539441089575653577}
   - component: {fileID: 425521854932723035}
   - component: {fileID: 5994728936323168038}
+  - component: {fileID: 7406691523853824695}
+  - component: {fileID: 6005268517648250462}
+  - component: {fileID: 857880112882608188}
   m_Layer: 13
   m_Name: BigClone
   m_TagString: BigClone
@@ -5086,6 +5089,7 @@ MonoBehaviour:
   bigCloneAttack: {fileID: 2940650665584716740}
   energyImage: {fileID: 1142632818159327263}
   canvas: {fileID: 1813597808420507997}
+  rideBigClone: {fileID: 6005268517648250462}
 --- !u!114 &2940650665584716740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5213,6 +5217,84 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 1
   m_SideArc: 1
+--- !u!61 &7406691523853824695
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003483819887161510}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.39756346, y: 0.52078503}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.0511484, y: 0.12582505}
+  m_EdgeRadius: 0
+--- !u!114 &6005268517648250462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003483819887161510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de84b0bdcdcb964ca48d226e90600ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joint: {fileID: 857880112882608188}
+--- !u!255 &857880112882608188
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003483819887161510}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -10.690721, y: 0}
+  m_DampingRatio: 0
+  m_Frequency: 0
 --- !u!1 &7322646895392454611
 GameObject:
   m_ObjectHideFlags: 0
