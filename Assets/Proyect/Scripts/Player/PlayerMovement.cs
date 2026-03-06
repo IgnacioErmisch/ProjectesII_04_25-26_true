@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     public float horizontal { get; private set; }
     public bool isMoving { get; private set; }
     public bool isGrounded { get; private set; }
-    public bool IsRiding => rideBigClone != null && rideBigClone.IsRiding;
 
     private Rigidbody2D rb2D;
     private SpriteRenderer spriteRenderer;
@@ -114,16 +113,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-          
-            if (IsRiding)
-            {
-                currentSpeed = 0f;
-                isMoving = false;
-                externalVelocity = Vector2.zero;
-                airCurrentExtraVelocity = Vector2.zero;
-                return;
-            }
-
             currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.fixedDeltaTime);
             float finalX = currentSpeed + externalVelocity.x;
             float finalY = rb2D.linearVelocity.y + externalVelocity.y;

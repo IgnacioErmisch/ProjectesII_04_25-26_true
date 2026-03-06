@@ -87,12 +87,14 @@ public class PerspectiveSwitch : MonoBehaviour
 
         if (controllingPlayer)
         {
+            currentClone.GetComponent<RideBigClone>()?.AttachPlayer();
             playerCamera.transform.SetParent(currentClone.transform);
             playerCamera.transform.localPosition = new Vector3(2, 1, -5);
 
         }
         else
         {
+            currentClone.GetComponent<RideBigClone>()?.DetachPlayer();
             playerCamera.transform.SetParent(player.transform);
             playerCamera.transform.localPosition = new Vector3(2, 2, -5);
 
