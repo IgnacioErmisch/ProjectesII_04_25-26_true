@@ -47,7 +47,7 @@ public class CloneSpawner : MonoBehaviour
         float distance = direction.magnitude;
         direction.Normalize();
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, groundLayer);
-        if(hit.rigidbody == null)
+        if(!Physics2D.Raycast(transform.position, direction, distance, groundLayer))
         {
             if(switchInterface.IsBigCloneSelected)
             {
