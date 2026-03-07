@@ -23,7 +23,13 @@ public class WallDestructor
     {
         if (wall != null && wall.CompareTag("Wall"))
         {
-            Object.Destroy(wall);
+            Animator animator = wall.GetComponent<Animator>();
+
+            if (animator != null)
+            {
+                animator.SetTrigger("Break");
+                Object.Destroy(wall, 0.30f);
+            }
         }
     }
 }
