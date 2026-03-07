@@ -37,7 +37,7 @@ public class EnemyGuardBlue : MonoBehaviour, IDamageableBlue
     private KnockbackSystem knockbackSystem;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-
+    [SerializeField] private SoundManager soundManager;
     [SerializeField] private int jumpsHitDamage;
 
 
@@ -81,6 +81,9 @@ public class EnemyGuardBlue : MonoBehaviour, IDamageableBlue
         {
             originalAttackPointLocalPosition = attackPoint.localPosition;
         }
+
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
     }
 
     private void Update()
@@ -243,6 +246,7 @@ public class EnemyGuardBlue : MonoBehaviour, IDamageableBlue
         }
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+        soundManager.PlaySFX(soundManager.blueAttack);
 
         foreach (Collider2D hit in hits)
         {

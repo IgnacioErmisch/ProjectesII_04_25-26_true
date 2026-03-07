@@ -20,6 +20,14 @@ public class SoundManager : MonoBehaviour
     public AudioClip movementBC;
     public AudioClip movementP;
     public AudioClip despawnClone;
+    public AudioClip bigCloneAttack;
+    public AudioClip redAttack;
+    public AudioClip blueAttack;
+    public AudioClip buttonDoor;
+    public AudioClip changePosition;
+    public AudioClip antiCloneZone;
+    public AudioClip antiGravity;
+    public AudioClip deactivateAntiCloneZone;
     public Slider musicSlider;
     public Slider sfxSlider;
     private float currentMusicVolume;

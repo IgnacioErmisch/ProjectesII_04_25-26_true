@@ -8,6 +8,8 @@ public class PositionSwapBlock : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private PerspectiveSwitch perspectiveSwitch;
+    [SerializeField] private SoundManager soundManager;
+
 
     private AudioSource audioSource;
     private float swapCooldown = 5f;
@@ -18,6 +20,7 @@ public class PositionSwapBlock : MonoBehaviour
 
     private void Awake()
     {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
             originalColor = spriteRenderer.color;
@@ -86,6 +89,7 @@ public class PositionSwapBlock : MonoBehaviour
         if (cloneRb != null) cloneRb.linearVelocity = playerVelocity;
 
         SwitchCameraToPlayer();
+        soundManager.PlaySFX(soundManager.changePosition);
 
         lastSwapTime = Time.time; 
     }

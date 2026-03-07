@@ -12,7 +12,7 @@ public class CloneGravity : MonoBehaviour
     private bool isInverted = false;
     private Transform spriteTransform;
     private Vector3 originalSpritePosition;
-    private Vector3 originalGroundCheckPosition; 
+    private Vector3 originalGroundCheckPosition;
 
     void Awake()
     {
@@ -41,8 +41,10 @@ public class CloneGravity : MonoBehaviour
                 groundCheck = foundCheck;
                 originalGroundCheckPosition = groundCheck.localPosition;
             }
-           
+
         }
+
+
     }
 
     void LateUpdate()
