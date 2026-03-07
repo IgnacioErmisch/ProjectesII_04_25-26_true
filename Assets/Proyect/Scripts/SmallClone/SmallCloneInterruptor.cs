@@ -3,6 +3,13 @@ using UnityEngine;
 public class SmallCloneInterruptor : MonoBehaviour
 {
     [SerializeField] private GameObject interruptorWall;
+    [SerializeField] private SoundManager soundManager;
+
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
+    }
     void Start()
     {
 
@@ -18,6 +25,7 @@ public class SmallCloneInterruptor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("SmallClone"))
         {
+            soundManager.PlaySFX(soundManager.buttonDoor);
             Destroy(gameObject);
             Destroy(interruptorWall);
         }

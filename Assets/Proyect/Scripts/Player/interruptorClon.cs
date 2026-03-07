@@ -4,9 +4,16 @@ public class BreakableZone : MonoBehaviour
 {
 
     [SerializeField] private AntiCloneZone antiCloneZone;
+    [SerializeField] private SoundManager soundManager;
 
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
+    }
     private void Break()
     {
+        soundManager.PlaySFX(soundManager.deactivateAntiCloneZone);
 
         if (antiCloneZone != null)
         {

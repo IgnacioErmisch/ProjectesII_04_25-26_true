@@ -37,7 +37,7 @@ public class BasicGuardEnemy : MonoBehaviour, IDamageableRed
     private KnockbackSystem knockbackSystem;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-
+    [SerializeField] private SoundManager soundManager;
     [SerializeField] private int jumpsHitDamage;
     
 
@@ -81,6 +81,9 @@ public class BasicGuardEnemy : MonoBehaviour, IDamageableRed
         {
             originalAttackPointLocalPosition = attackPoint.localPosition;
         }
+
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
     }
 
     private void Update()
@@ -243,6 +246,7 @@ public class BasicGuardEnemy : MonoBehaviour, IDamageableRed
         }
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+        soundManager.PlaySFX(soundManager.redAttack);
 
         foreach (Collider2D hit in hits)
         {
@@ -261,8 +265,7 @@ public class BasicGuardEnemy : MonoBehaviour, IDamageableRed
 
         healthSystem.TakeDamage(damage, knockbackDirection);
         knockbackSystem.ApplyKnockback(knockbackDirection);
-
-        
+  
         if (animController != null)
         {
             animController.PlayHitAnimation();
