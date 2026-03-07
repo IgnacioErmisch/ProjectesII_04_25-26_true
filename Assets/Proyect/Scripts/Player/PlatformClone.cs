@@ -8,6 +8,7 @@ public class PlatformClone : MonoBehaviour
     private Vector3 startPosition;
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
+    [SerializeField] private GameObject[] arrows;
 
     void Start()
     {
@@ -15,6 +16,8 @@ public class PlatformClone : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
             originalColor = spriteRenderer.color;
+
+        SetArrowsActive(true);
     }
 
     void Update()
@@ -43,6 +46,8 @@ public class PlatformClone : MonoBehaviour
         direction = 1;
         if (spriteRenderer != null)
             spriteRenderer.color = Color.red;
+
+        SetArrowsActive(false); 
     }
 
     public void MoveDown()
@@ -50,6 +55,8 @@ public class PlatformClone : MonoBehaviour
         direction = -1;
         if (spriteRenderer != null)
             spriteRenderer.color = Color.blue;
+
+        SetArrowsActive(false); 
     }
 
     public void Stop()
@@ -57,5 +64,15 @@ public class PlatformClone : MonoBehaviour
         direction = 0;
         if (spriteRenderer != null)
             spriteRenderer.color = originalColor;
+
+        SetArrowsActive(true); 
+    }
+
+    private void SetArrowsActive(bool active)
+    {
+        foreach (GameObject arrow in arrows)
+        {
+            arrow.SetActive(active);
+        }
     }
 }
