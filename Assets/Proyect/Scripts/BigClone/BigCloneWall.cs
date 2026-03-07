@@ -51,7 +51,11 @@ public class BigCloneWallDestroyer
             GameObject wall = wallContact.GetCurrentWall();
 
             if (wall != null)
+            {
                 wallDestructor.DestroyWall(wall);
+                wallContact.SetWallContact(null, false);
+            }
+               
         }
     }
 
