@@ -37,6 +37,7 @@ public class BigCloneController : MonoBehaviour
     [SerializeField] private Transform canvas;
 
     [SerializeField] private RideBigClone rideBigClone;
+    [SerializeField] private SoundManager soundManager;
 
 
     private void Awake()
@@ -46,6 +47,8 @@ public class BigCloneController : MonoBehaviour
         CinemachineSingleton.Instance.SetBigClone(transformBigClone);
         GameManager.Instance.SetBigCloneEnergy(energyImage);
         GameManager.Instance.SetBigCloneCanvas(canvas);
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
     }
 
     private void OnDestroy()
@@ -96,7 +99,15 @@ public class BigCloneController : MonoBehaviour
 
         if (!wallDestroyer.isAttacking)
         {
+            bool wasTouchingWall = wallContactDetector.IsTouchingWall();
+
             wallDestroyer.CheckAndDestroyWall();
+
+            if (wasTouchingWall && !wallContactDetector.IsTouchingWall())
+            {
+                soundManager.PlaySFX(soundManager.wallBreak); 
+            }
+
             if (wallContactDetector.IsTouchingWall() && bigCloneAttack.isDashing)
             {
                 wallDestroyer.StartAttack(this);
