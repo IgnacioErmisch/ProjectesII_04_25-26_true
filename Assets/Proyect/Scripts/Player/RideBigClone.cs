@@ -2,16 +2,30 @@ using UnityEngine;
 
 public class RideBigClone : MonoBehaviour
 {
-    [SerializeField] private FixedJoint2D joint;
-    [SerializeField] private SpriteRenderer bigCloneSpriteRenderer; 
+    [SerializeField] private SpriteRenderer bigCloneSpriteRenderer;
+    [SerializeField] private Transform playerAnchorPoint;
 
     private Rigidbody2D player;
     private SpriteRenderer playerSpriteRenderer;
     private Transform cloneCanvas;
     private Vector3 canvasOriginalPosition;
+    private Transform playerTransform;
+    private float originalGravity;
+    private bool isAttached = false;
+
+    private void FixedUpdate()
+    {
+        if (!isAttached || player == null || playerAnchorPoint == null) return;
+
+        player.MovePosition(playerAnchorPoint.position);
+        player.MoveRotation(rb.rotation); 
+        player.linearVelocity = Vector2.zero;
+    }
 
     private void Update()
     {
+        if (!isAttached) return;
+
         if (!GameManager.Instance.GetControlllingPlayer())
         {
             if (bigCloneSpriteRenderer != null && player != null)
@@ -22,7 +36,16 @@ public class RideBigClone : MonoBehaviour
                     pm.ForceFlipVisualOnly(cloneFacingRight);
             }
         }
-         
+
+        if (playerTransform != null)
+            playerTransform.rotation = transform.rotation;
+    }
+
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,6 +54,7 @@ public class RideBigClone : MonoBehaviour
         {
             player = collision.attachedRigidbody;
             playerSpriteRenderer = player.GetComponentInChildren<SpriteRenderer>();
+            playerTransform = player.transform;
         }
     }
 
@@ -40,14 +64,18 @@ public class RideBigClone : MonoBehaviour
         {
             player = null;
             playerSpriteRenderer = null;
+            playerTransform = null;
         }
     }
 
     public void AttachPlayer()
     {
         if (player == null) return;
-        joint.enabled = true;
-        joint.connectedBody = player;
+        isAttached = true;
+
+        originalGravity = player.gravityScale;
+        player.gravityScale = 0f;
+        player.linearVelocity = Vector2.zero;
 
         if (cloneCanvas == null)
         {
@@ -55,7 +83,6 @@ public class RideBigClone : MonoBehaviour
             if (cloneCanvas != null)
                 canvasOriginalPosition = cloneCanvas.localPosition;
         }
-
         if (playerSpriteRenderer != null)
             playerSpriteRenderer.sortingOrder = 1;
         if (cloneCanvas != null)
@@ -64,12 +91,22 @@ public class RideBigClone : MonoBehaviour
 
     public void DetachPlayer()
     {
-        joint.enabled = false;
+        isAttached = false;
+
+        if (playerTransform != null)
+            playerTransform.rotation = Quaternion.identity;
+
+        if (player != null)
+        {
+            player.gravityScale = originalGravity;
+            player.MoveRotation(0f);
+        }
+
         if (playerSpriteRenderer != null)
             playerSpriteRenderer.sortingOrder = 3;
         if (cloneCanvas != null)
             cloneCanvas.localPosition = canvasOriginalPosition;
     }
 
-    public bool IsAtached() => player != null;
+    public bool IsAtached() => player != null && isAttached;
 }
