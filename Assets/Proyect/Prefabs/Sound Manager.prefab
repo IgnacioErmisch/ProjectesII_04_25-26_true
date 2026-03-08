@@ -334,6 +334,7 @@ MonoBehaviour:
   sfxSlider: {fileID: 0}
   selectButton: {fileID: 8300000, guid: b26b37b2d90d8774d8f3c20feb7cd926, type: 3}
   clickButton: {fileID: 8300000, guid: bbb8d78837d4720459d70ed46ff54457, type: 3}
+  sfxMixerGroup: {fileID: 398947354316977177, guid: a1e6c5f046e8f6b4fb4c47c77c8dfa32, type: 2}
 --- !u!1 &7780479685084991648
 GameObject:
   m_ObjectHideFlags: 0

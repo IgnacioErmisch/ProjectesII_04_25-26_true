@@ -37,6 +37,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip clickButton;
     private float currentMusicVolume;
     private float currentSFXVolume;
+    public AudioMixerGroup sfxMixerGroup;
+
+
 
     private void Awake()
     {

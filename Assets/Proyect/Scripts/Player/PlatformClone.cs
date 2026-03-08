@@ -29,6 +29,7 @@ public class PlatformClone : MonoBehaviour
         platformAudioSource.loop = true;
         platformAudioSource.playOnAwake = false;
         platformAudioSource.clip = soundManager.movingPlatform;
+        platformAudioSource.outputAudioMixerGroup = soundManager.sfxMixerGroup;
     }
 
     void Update()
