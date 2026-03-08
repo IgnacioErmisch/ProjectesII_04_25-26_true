@@ -207,13 +207,13 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   chaseSpeed: 3.5
   chaseDuration: 2
   attackDamage: 10
   attackRange: 1.5
   attackCooldown: 4
-  attackPoint: {fileID: 0}
+  attackPoint: {fileID: 2588736465276988488}
   knockbackForce: 8
   knockbackDuration: 0.4
   animator: {fileID: 0}
@@ -231,8 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff0fbd088648314a8e6e5b2c1a383e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  guardEnemy: {fileID: 0}
+  animator: {fileID: 4561867759333438744}
+  guardEnemy: {fileID: 1626526914751043155}
 --- !u!1 &2023557054049064502
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,6 +28,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1453382439532847995, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 845755300797115378}
+    - target: {fileID: 1453382439532847995, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+      propertyPath: guardEnemy
+      value: 
+      objectReference: {fileID: 3165215723348154731}
     - target: {fileID: 2242407336774715265, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: maxHealth
       value: 1e+9
@@ -106,3 +114,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+--- !u!95 &845755300797115378 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4561867759333438744, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+  m_PrefabInstance: {fileID: 3815599440455671530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3165215723348154731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2242407336774715265, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
+  m_PrefabInstance: {fileID: 3815599440455671530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11fb8ba270548ac4ab6e0ec2a15075e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
