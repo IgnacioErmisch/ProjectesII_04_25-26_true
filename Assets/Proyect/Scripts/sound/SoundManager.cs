@@ -29,6 +29,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip antiGravity;
     public AudioClip deactivateAntiCloneZone;
     public AudioClip wallBreak;
+    public AudioClip catapult;
+    public AudioClip movingPlatform;
     public Slider musicSlider;
     public Slider sfxSlider;
     public AudioClip selectButton;
