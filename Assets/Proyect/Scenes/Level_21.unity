@@ -35325,6 +35325,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476432120}
   m_CullTransparentMesh: 1
+--- !u!1001 &564440633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.538
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097152303326953323, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_Name
+      value: Cristal Light (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91448e84487f6464f84112b0f377503d, type: 3}
 --- !u!114 &613612045 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2422469225576866864, guid: c26c76f2479fdc646920881898f608c3, type: 3}
@@ -35875,6 +35932,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &629624566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.447
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097152303326953323, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_Name
+      value: Cristal Light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91448e84487f6464f84112b0f377503d, type: 3}
 --- !u!1001 &634278737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127039,6 +127153,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3545479834510967657, guid: 0e3b5d541c5a1184c83e318f92024284, type: 3}
   m_PrefabInstance: {fileID: 1715856886}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1720292559
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.539
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257747410419913464, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097152303326953323, guid: 91448e84487f6464f84112b0f377503d, type: 3}
+      propertyPath: m_Name
+      value: Cristal Light (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91448e84487f6464f84112b0f377503d, type: 3}
 --- !u!1001 &1781431151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128843,3 +129014,6 @@ SceneRoots:
   - {fileID: 79217988}
   - {fileID: 993751911}
   - {fileID: 2036996372}
+  - {fileID: 629624566}
+  - {fileID: 564440633}
+  - {fileID: 1720292559}
