@@ -35,10 +35,12 @@ public class GameManager : MonoBehaviour
     {
         if (Gamepad.all.Count > 0)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
         else
         {
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
     }
