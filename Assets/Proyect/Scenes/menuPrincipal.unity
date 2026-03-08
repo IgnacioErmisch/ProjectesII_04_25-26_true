@@ -846,6 +846,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &503925838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8074660789686536256, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+  m_PrefabInstance: {fileID: 1849303343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1243,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17f5aed97a315640bed48a102feb9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxSpeed: 0.00001
+  layers:
+  - plano: {fileID: 1678157534}
+    speed: 0.036
+    mat: {fileID: 0}
+    distance: 0
+  - plano: {fileID: 503925838}
+    speed: 0.083
+    mat: {fileID: 0}
+    distance: 0
+  - plano: {fileID: 1028081203}
+    speed: 0.13
+    mat: {fileID: 0}
+    distance: 0
+  globalSpeedMultiplier: 1
+  isPlaying: 1
+  autoAssignSpeeds: 0
+  minSpeed: 0.02
+  maxSpeed: 0.15
 --- !u!1 &611595229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,6 +2105,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018751710}
   m_CullTransparentMesh: 1
+--- !u!1 &1028081203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1321063497203643205, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+  m_PrefabInstance: {fileID: 1849303343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1083505936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,6 +2604,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603884705}
   m_CullTransparentMesh: 1
+--- !u!1 &1678157534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4891230441716069765, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+  m_PrefabInstance: {fileID: 1849303343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1696904299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,6 +3151,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4143204048189295576, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+    - {fileID: 2352425493878071064, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+    - {fileID: 7916689549915602213, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+    - {fileID: 2100407887362581721, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

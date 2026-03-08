@@ -2,36 +2,87 @@ using UnityEngine;
 
 public class ParallaxControllerMainMenu : MonoBehaviour
 {
-    Material[] mat;
-    float[] backSpeed;
+    [System.Serializable]
+    public class ParallaxLayer
+    {
+        public GameObject plano;      
+        [Range(0f, 0.5f)]
+        public float speed = 0.1f;        
+        [HideInInspector] public Material mat;
+        [HideInInspector] public float distance;
+    }
 
-    [Range(0.00001f, 0.05f)]
-    public float parallaxSpeed = 0.0001f;
+    [Header("Capas de Parallax")]
+    public ParallaxLayer[] layers;
 
-    private float offset = 0f;
+    [Header("Configuración Global")]
+    [Tooltip("Multiplicador global que afecta a todas las capas")]
+    public float globalSpeedMultiplier = 1f;
+
+    [Tooltip("Activa/desactiva el movimiento del parallax")]
+    public bool isPlaying = true;
+
+    [Header("Velocidades por Defecto (si no asignas manualmente)")]
+    [Tooltip("Si está activado, asigna velocidades automáticas escalonadas")]
+    public bool autoAssignSpeeds = false;
+    public float minSpeed = 0.02f;
+    public float maxSpeed = 0.15f;
 
     void Start()
     {
-        int backCount = transform.childCount;
-        mat = new Material[backCount];
-        backSpeed = new float[backCount];
+        InitializeLayers();
+    }
 
-        for (int i = 0; i < backCount; i++)
+    void InitializeLayers()
+    {
+        for (int i = 0; i < layers.Length; i++)
         {
-            GameObject bg = transform.GetChild(i).gameObject;
-            mat[i] = bg.GetComponent<Renderer>().material;
-            // Cada capa se mueve a distinta velocidad según su índice
-            backSpeed[i] = (i + 1f) / backCount;
+            if (layers[i].plano == null) continue;
+
+            Renderer rend = layers[i].plano.GetComponent<Renderer>();
+            if (rend != null)
+            {
+               
+                layers[i].mat = rend.material;
+            }
+                  
+            if (autoAssignSpeeds && layers.Length > 1)
+            {
+                layers[i].speed = Mathf.Lerp(minSpeed, maxSpeed, (float)i / (layers.Length - 1));
+            }
         }
     }
 
     void Update()
     {
-        offset += Time.deltaTime * parallaxSpeed;
+        if (!isPlaying) return;
 
-        for (int i = 0; i < mat.Length; i++)
+        foreach (var layer in layers)
         {
-            mat[i].SetTextureOffset("_MainTex", new Vector2(offset * backSpeed[i], 0));
+            if (layer.mat == null) continue;
+
+            layer.distance += Time.deltaTime * layer.speed * globalSpeedMultiplier;
+            layer.mat.SetTextureOffset("_MainTex", Vector2.right * layer.distance);
         }
+    }
+
+    public void SetPlaying(bool playing)
+    {
+        isPlaying = playing;
+    }
+
+    public void ResetLayers()
+    {
+        foreach (var layer in layers)
+        {
+            layer.distance = 0f;
+            if (layer.mat != null)
+                layer.mat.SetTextureOffset("_MainTex", Vector2.zero);
+        }
+    }
+
+    public void SetGlobalSpeed(float multiplier)
+    {
+        globalSpeedMultiplier = multiplier;
     }
 }
