@@ -54,12 +54,13 @@ public class ParallaxController : MonoBehaviour
     {
         float distanceX = cam.position.x - camStartPos.x;
 
+
         transform.position = new Vector3(cam.position.x - 35, cam.position.y, 0);
         for (int i = 0; i < backgrounds.Length; i++)
         {
             float speed = backSpeed[i] * parallaxSpeed;
 
-            mat[i].SetTextureOffset("_MainTex", new Vector2(distanceX, 0) * speed);
+            mat[i].SetTextureOffset("_MainTex", new Vector2(distanceX,0) * speed);
         }
     }
 }

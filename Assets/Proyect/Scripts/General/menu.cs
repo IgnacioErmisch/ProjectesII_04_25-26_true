@@ -27,6 +27,17 @@ public class menuScene : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Gamepad.all.Count > 0)
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
+    }
     public void LoadSelector()
     {
         SceneManager.LoadScene("LevelSelector");
