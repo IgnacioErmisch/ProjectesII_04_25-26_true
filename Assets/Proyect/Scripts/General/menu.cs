@@ -20,7 +20,45 @@ public class menuScene : MonoBehaviour
             SoundManager.Instance.AssignSliders(musicSlider, sfxSlider);
         }
 
+        // Suscribirse al evento de conexión de gamepad
+        InputSystem.onDeviceChange += OnDeviceChange;
+
         if (Gamepad.all.Count > 0)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(botonPlay);
+        }
+    }
+
+    void OnDestroy()
+    {
+        // Siempre desuscribirse para evitar memory leaks
+        InputSystem.onDeviceChange -= OnDeviceChange;
+    }
+
+    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        if (device is Gamepad)
+        {
+            if (change == InputDeviceChange.Added || change == InputDeviceChange.Reconnected)
+            {
+                // Pequeño delay para que el EventSystem procese el cambio correctamente
+                StartCoroutine(SelectPlayButtonNextFrame());
+            }
+        }
+    }
+
+    private System.Collections.IEnumerator SelectPlayButtonNextFrame()
+    {
+        yield return null; // Espera un frame
+
+        // Si el panel de settings está abierto, seleccionar sfx en su lugar
+        if (panelSettings.activeSelf)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(sfx);
+        }
+        else
         {
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(botonPlay);
@@ -40,39 +78,40 @@ public class menuScene : MonoBehaviour
             Cursor.visible = true;
         }
     }
+
     public void LoadSelector()
     {
         SceneManager.LoadScene("LevelSelector");
         Time.timeScale = 1;
     }
+
     public void ExitGame()
     {
         Time.timeScale = 1;
         Application.Quit();
     }
+
     public void LoadMenu()
     {
         SceneManager.LoadScene("menuPrincipal");
     }
+
     public void Settings()
     {
         panelSettings.SetActive(true);
-
         if (Gamepad.all.Count > 0)
         {
             EventSystem.current.SetSelectedGameObject(sfx);
         }
-
     }
+
     public void closeSettings()
     {
         panelSettings.SetActive(false);
-
         if (Gamepad.all.Count > 0)
         {
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(botonSettings);
         }
-       
     }
 }
