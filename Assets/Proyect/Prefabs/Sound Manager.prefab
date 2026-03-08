@@ -330,6 +330,7 @@ MonoBehaviour:
   wallBreak: {fileID: 8300000, guid: e4671bd9b91560b409475ae0ecddcdc0, type: 3}
   catapult: {fileID: 8300000, guid: 66275fc516bca8348b6cf82fb6d3ee5e, type: 3}
   movingPlatform: {fileID: 8300000, guid: 7e4985a93cac09d4aa38d9a5e1d5b660, type: 3}
+  showPlatforms: {fileID: 8300000, guid: 5d50ecbdf9cb8db41b12df7ab51505fc, type: 3}
   musicSlider: {fileID: 0}
   sfxSlider: {fileID: 0}
   selectButton: {fileID: 8300000, guid: b26b37b2d90d8774d8f3c20feb7cd926, type: 3}
