@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platforms: {fileID: 0}
   rb: {fileID: 430937209084888200}
-  colorOff: {r: 0.9622642, g: 0, b: 0.09204213, a: 1}
+  colorOff: {r: 1, g: 1, b: 1, a: 1}
 --- !u!61 &777545901688002898
 BoxCollider2D:
   m_ObjectHideFlags: 0
