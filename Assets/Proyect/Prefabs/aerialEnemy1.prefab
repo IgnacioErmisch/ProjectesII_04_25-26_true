@@ -170,7 +170,7 @@ MonoBehaviour:
   patrolRangeX: 12
   patrolRangeY: 8
   patrolCenter: {x: 0, y: 0}
-  electricPulsePrefab: {fileID: 2136761268959517295, guid: a6a8c034ece449f4080364d1ed13e453, type: 3}
+  electricPulsePrefab: {fileID: 0}
   pulseInterval: 3
   pulseDamage: 15
   pulseRadius: 1.5
