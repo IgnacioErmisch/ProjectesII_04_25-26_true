@@ -42,7 +42,6 @@ public class SoundManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
         }
         else
         {
@@ -53,14 +52,20 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        musicSource.clip = background;
-        musicSource.loop = true;
-        musicSource.Play();
         currentMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
         currentSFXVolume = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
         ApplyMusicVolume(currentMusicVolume);
         ApplySFXVolume(currentSFXVolume);
         ConfigureSliders();
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        if (musicSource.clip == clip && musicSource.isPlaying) return;
+        musicSource.Stop();
+        musicSource.clip = clip;
+        musicSource.loop = true;
+        musicSource.Play();
     }
 
     private void ConfigureSliders()
@@ -70,28 +75,23 @@ public class SoundManager : MonoBehaviour
             musicSlider.SetValueWithoutNotify(currentMusicVolume);
             musicSlider.onValueChanged.RemoveListener(SetMusicVolume);
             musicSlider.onValueChanged.AddListener(SetMusicVolume);
-            ApplyMusicVolume(currentMusicVolume); 
+            ApplyMusicVolume(currentMusicVolume);
         }
         if (sfxSlider != null)
         {
             sfxSlider.SetValueWithoutNotify(currentSFXVolume);
             sfxSlider.onValueChanged.RemoveListener(SetSFXVolume);
             sfxSlider.onValueChanged.AddListener(SetSFXVolume);
-            ApplySFXVolume(currentSFXVolume); 
+            ApplySFXVolume(currentSFXVolume);
         }
     }
 
     public void AssignSliders(Slider music, Slider sfx)
     {
-
         if (musicSlider != null)
-        {
             musicSlider.onValueChanged.RemoveListener(SetMusicVolume);
-        }
         if (sfxSlider != null)
-        {
             sfxSlider.onValueChanged.RemoveListener(SetSFXVolume);
-        }
 
         musicSlider = music;
         sfxSlider = sfx;
@@ -105,7 +105,6 @@ public class SoundManager : MonoBehaviour
         audioMixer.SetFloat("MusicVolume", volume);
     }
 
-   
     private void ApplySFXVolume(float value)
     {
         float volume = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1)) * 20;
@@ -135,9 +134,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayLoop(AudioClip clip)
     {
-        if (loopSource.clip == clip && loopSource.isPlaying)
-            return;
-
+        if (loopSource.clip == clip && loopSource.isPlaying) return;
         loopSource.clip = clip;
         loopSource.loop = true;
         loopSource.Play();
