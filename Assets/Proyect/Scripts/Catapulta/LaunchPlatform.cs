@@ -21,23 +21,17 @@ public class LaunchPlatform : MonoBehaviour
     [SerializeField] private float launchOffset = 0.5f;
     [SerializeField] private float launchAnimationSpeed = 15f;
     [SerializeField] private ParticleSystem launchEffect;
-    [SerializeField] private AudioClip launchSound;
-
+    [SerializeField] private SoundManager soundManager;
     private Vector3 originalPosition;
     private Vector3 targetPosition;
-    private AudioSource audioSource;
     private List<GameObject> playersNearby = new List<GameObject>();
 
     private void Awake()
     {
         originalPosition = transform.position;
         targetPosition = originalPosition;
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
 
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null && launchSound != null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
     }
 
     private void Update()
@@ -188,10 +182,7 @@ public class LaunchPlatform : MonoBehaviour
             Instantiate(launchEffect, transform.position, Quaternion.identity);
         }
 
-        if (audioSource != null && launchSound != null)
-        {
-            audioSource.PlayOneShot(launchSound);
-        }
+        soundManager.PlaySFX(soundManager.catapult);
     }
 
     public void ForceReset()

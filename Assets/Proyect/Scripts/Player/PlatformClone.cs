@@ -9,6 +9,12 @@ public class PlatformClone : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     [SerializeField] private GameObject[] arrows;
+    [SerializeField] private SoundManager soundManager;
+
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+    }
 
     void Start()
     {
@@ -16,7 +22,6 @@ public class PlatformClone : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
             originalColor = spriteRenderer.color;
-
         SetArrowsActive(true);
     }
 
@@ -24,8 +29,8 @@ public class PlatformClone : MonoBehaviour
     {
         if (direction != 0)
         {
-            float distanceFromStart = transform.position.y - startPosition.y;
 
+            float distanceFromStart = transform.position.y - startPosition.y;
             if (direction == 1 && distanceFromStart >= maxDistance)
             {
                 Stop();
@@ -36,7 +41,6 @@ public class PlatformClone : MonoBehaviour
                 Stop();
                 return;
             }
-
             transform.Translate(Vector3.up * direction * moveSpeed * Time.deltaTime, Space.World);
         }
     }
@@ -44,19 +48,22 @@ public class PlatformClone : MonoBehaviour
     public void MoveUp()
     {
         direction = 1;
+        soundManager.PlayLoop(soundManager.movingPlatform);
+
         if (spriteRenderer != null)
             spriteRenderer.color = Color.red;
-
-        SetArrowsActive(false); 
+        SetArrowsActive(false);
     }
 
     public void MoveDown()
     {
         direction = -1;
+        soundManager.PlayLoop(soundManager.movingPlatform);
+
         if (spriteRenderer != null)
             spriteRenderer.color = Color.blue;
-
-        SetArrowsActive(false); 
+        soundManager.PlayLoop(soundManager.movingPlatform);
+        SetArrowsActive(false);
     }
 
     public void Stop()
@@ -64,8 +71,8 @@ public class PlatformClone : MonoBehaviour
         direction = 0;
         if (spriteRenderer != null)
             spriteRenderer.color = originalColor;
-
-        SetArrowsActive(true); 
+        soundManager.StopLoop();
+        SetArrowsActive(true);
     }
 
     private void SetArrowsActive(bool active)
