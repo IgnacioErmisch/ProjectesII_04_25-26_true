@@ -1,65 +1,75 @@
 using UnityEngine;
+
 public class ParallaxController : MonoBehaviour
 {
     Transform cam;
     Vector3 camStartPos;
-    float distance;
     GameObject[] backgrounds;
     Material[] mat;
     float[] backSpeed;
     float farthestBack;
     [Range(0.01f, 0.05f)]
-    public float parallaxSpeed;
-
+    public float parallaxSpeed = 0.02f;
     [Range(0f, 1f)]
-    public float verticalSmoothFactor = 0.1f; // 0 = sin movimiento vertical, 1 = movimiento completo
-
+    public float verticalSmoothFactor = 0f;
     float smoothedY;
+    float smoothedX;
 
     void Start()
     {
         cam = Camera.main.transform;
         camStartPos = cam.position;
-        smoothedY = cam.position.y; // <-- inicializar Y suavizada
+        smoothedY = cam.position.y;
+        smoothedX = cam.position.x;
 
         int backCount = transform.childCount;
         mat = new Material[backCount];
         backSpeed = new float[backCount];
         backgrounds = new GameObject[backCount];
+
         for (int i = 0; i < backCount; i++)
         {
             backgrounds[i] = transform.GetChild(i).gameObject;
             mat[i] = backgrounds[i].GetComponent<Renderer>().material;
         }
+
         BackSpeedCalculate(backCount);
     }
+
     void BackSpeedCalculate(int backCount)
     {
+        farthestBack = 0f;
+
         for (int i = 0; i < backCount; i++)
         {
-            if ((backgrounds[i].transform.position.z - cam.position.z) > farthestBack)
-            {
-                farthestBack = backgrounds[i].transform.position.z - cam.position.z;
-            }
+            float depth = backgrounds[i].transform.position.z - cam.position.z;
+            if (depth > farthestBack)
+                farthestBack = depth;
         }
+
         for (int i = 0; i < backCount; i++)
         {
-            backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / farthestBack;
+            float depth = backgrounds[i].transform.position.z - cam.position.z;
+            backSpeed[i] = (farthestBack != 0f) ? 1f - (depth / farthestBack) : 0f;
         }
     }
+
     private void LateUpdate()
     {
-        float distanceX = cam.position.x - camStartPos.x;
 
-        // Suavizar el Y para reducir vibración al saltar
-        smoothedY = Mathf.Lerp(smoothedY, cam.position.y, verticalSmoothFactor);
+        smoothedX = Mathf.Lerp(smoothedX, cam.position.x, 0.15f);
+        smoothedY = (verticalSmoothFactor > 0f)
+            ? Mathf.Lerp(smoothedY, cam.position.y, verticalSmoothFactor)
+            : camStartPos.y;
 
-        transform.position = new Vector3(cam.position.x - 35, smoothedY, 0);
 
+        transform.position = new Vector3(smoothedX - 35f, smoothedY, 0f);
+
+        float distanceX = smoothedX - camStartPos.x;
         for (int i = 0; i < backgrounds.Length; i++)
         {
             float speed = backSpeed[i] * parallaxSpeed;
-            mat[i].SetTextureOffset("_MainTex", new Vector2(distanceX, 0) * speed);
+            mat[i].SetTextureOffset("_MainTex", new Vector2(distanceX * speed, 0f));
         }
     }
 }
