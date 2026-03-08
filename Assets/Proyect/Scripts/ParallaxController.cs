@@ -12,7 +12,7 @@ public class ParallaxController : MonoBehaviour
     public float parallaxSpeed;
 
     [Range(0f, 1f)]
-    public float verticalSmoothFactor = 0.1f; 
+    public float verticalSmoothFactor = 0.1f; // 0 = sin movimiento vertical, 1 = movimiento completo
 
     float smoothedY;
 
@@ -20,7 +20,7 @@ public class ParallaxController : MonoBehaviour
     {
         cam = Camera.main.transform;
         camStartPos = cam.position;
-        smoothedY = cam.position.y; 
+        smoothedY = cam.position.y; // <-- inicializar Y suavizada
 
         int backCount = transform.childCount;
         mat = new Material[backCount];
@@ -51,16 +51,7 @@ public class ParallaxController : MonoBehaviour
     {
         float distanceX = cam.position.x - camStartPos.x;
 
-<<<<<<< HEAD
-
-        transform.position = new Vector3(cam.position.x - 35, cam.position.y, 0);
-        for (int i = 0; i < backgrounds.Length; i++)
-        {
-            float speed = backSpeed[i] * parallaxSpeed;
-
-            mat[i].SetTextureOffset("_MainTex", new Vector2(distanceX,0) * speed);
-=======
-       
+        // Suavizar el Y para reducir vibración al saltar
         smoothedY = Mathf.Lerp(smoothedY, cam.position.y, verticalSmoothFactor);
 
         transform.position = new Vector3(cam.position.x - 35, smoothedY, 0);
@@ -69,7 +60,6 @@ public class ParallaxController : MonoBehaviour
         {
             float speed = backSpeed[i] * parallaxSpeed;
             mat[i].SetTextureOffset("_MainTex", new Vector2(distanceX, 0) * speed);
->>>>>>> feature/fix
         }
     }
 }
