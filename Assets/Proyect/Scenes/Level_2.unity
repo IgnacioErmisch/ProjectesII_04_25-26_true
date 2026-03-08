@@ -6497,6 +6497,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1635217541218530971, guid: 342d6971623396448822f2204dd92246, type: 3}
   m_PrefabInstance: {fileID: 639106821}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &628513524
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.484
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0065160254
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989004863219017769, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063269119180983152, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
+      propertyPath: m_Name
+      value: MushroomParticle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 824b1d5869422474d8f9c2bcb25f338f, type: 3}
 --- !u!1001 &639106821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12402,7 +12459,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 5.4
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -13322,3 +13379,4 @@ SceneRoots:
   - {fileID: 664718866}
   - {fileID: 1934890969}
   - {fileID: 936378252}
+  - {fileID: 628513524}

@@ -18,7 +18,6 @@ public class mushroomsParticles : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        Debug.Log(timer);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
