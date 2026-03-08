@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Controller inputActions;
     private SoundManager soundManager;
+    private RideBigClone rideBigClone;
 
     public float horizontal { get; private set; }
     public bool isMoving { get; private set; }
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        rideBigClone = GetComponent<RideBigClone>();
     }
 
     private void Update()
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             horizontal = 0f;
+            isMoving = false;
         }
 
         bool isCurrentlyMoving = isGrounded && isMoving && Mathf.Abs(currentSpeed) > 0.1f;
@@ -114,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
             float finalX = currentSpeed + externalVelocity.x;
             float finalY = rb2D.linearVelocity.y + externalVelocity.y;
             rb2D.linearVelocity = new Vector2(finalX, finalY);
+            isMoving = false;
         }
 
         externalVelocity = Vector2.zero;
@@ -128,7 +132,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void ApplyMovement()
     {
-        
         if (isInAirCurrent)
         {
             Vector2 currentDir = airCurrentVelocity.normalized;
@@ -171,48 +174,35 @@ public class PlayerMovement : MonoBehaviour
 
         if (currentSpeed > 0.1f && !facingRight) Flip();
         else if (currentSpeed < -0.1f && facingRight) Flip();
+        
     }
 
-    public void SetExternalVelocity(Vector2 velocity)
-    {
-        externalVelocity += velocity;
-    }
-    public void SetAirCurrentVelocity(Vector2 velocity)
-    {
-        isInAirCurrent = true;
-        airCurrentVelocity = velocity;
-    }
-    public void AddAirCurrentExtra(Vector2 extra)
-    {
-        airCurrentExtraVelocity += extra;
-    }
-
-    public void ClearAirCurrent()
-    {
-        isInAirCurrent = false;
-        airCurrentVelocity = Vector2.zero;
-        airCurrentExtraVelocity = Vector2.zero;
-    }
-
-    public void DisableControlForLaunch(float duration)
-    {
-        isBeingLaunched = true;
-        launchControlDisableTime = Time.time + duration;
-    }
+    public void SetExternalVelocity(Vector2 velocity) => externalVelocity += velocity;
+    public void SetAirCurrentVelocity(Vector2 velocity) { isInAirCurrent = true; airCurrentVelocity = velocity; }
+    public void AddAirCurrentExtra(Vector2 extra) => airCurrentExtraVelocity += extra;
+    public void ClearAirCurrent() { isInAirCurrent = false; airCurrentVelocity = Vector2.zero; airCurrentExtraVelocity = Vector2.zero; }
+    public void DisableControlForLaunch(float duration) { isBeingLaunched = true; launchControlDisableTime = Time.time + duration; }
 
     public bool IsFacingRight() => facingRight;
     public float GetCurrentSpeed() => currentSpeed;
     public bool IsOnEdge() => isOnEdge;
 
-    private bool CheckGround()
+   
+    public void ForceFlipVisualOnly(bool shouldFaceRight)
     {
-        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (facingRight == shouldFaceRight) return;
+        facingRight = shouldFaceRight;
+        spriteRenderer.flipX = !facingRight;
+        cloneSpawnerPoint.localPosition = new Vector3(-cloneSpawnerPoint.localPosition.x, cloneSpawnerPoint.localPosition.y, cloneSpawnerPoint.localPosition.z);
+        cloneSpawnerPointUp.localPosition = new Vector3(-cloneSpawnerPointUp.localPosition.x, cloneSpawnerPointUp.localPosition.y, cloneSpawnerPointUp.localPosition.z);
+        cloneSpawnerPointSecond.localPosition = new Vector3(-cloneSpawnerPointSecond.localPosition.x, cloneSpawnerPointSecond.localPosition.y, cloneSpawnerPointSecond.localPosition.z);
     }
+
+    private bool CheckGround() => Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
     private void CheckEdge()
     {
         if (!isGrounded) { isOnEdge = false; return; }
-
         bool frontHasGround = Physics2D.Raycast(edgeCheckFront.position, Vector2.down, edgeCheckDistance, groundLayer);
         bool backHasGround = Physics2D.Raycast(edgeCheckBack.position, Vector2.down, edgeCheckDistance, groundLayer);
         isOnEdge = !frontHasGround || !backHasGround;
@@ -227,7 +217,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Flip()
+    public void Flip()
     {
         facingRight = !facingRight;
         spriteRenderer.flipX = !facingRight;
@@ -248,7 +238,6 @@ public class PlayerMovement : MonoBehaviour
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
-
         if (edgeCheckFront != null && edgeCheckBack != null)
         {
             Gizmos.color = Color.yellow;

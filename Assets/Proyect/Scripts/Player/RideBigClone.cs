@@ -2,76 +2,111 @@ using UnityEngine;
 
 public class RideBigClone : MonoBehaviour
 {
-    private Transform originalParent;
-    private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
-    private SpriteRenderer cloneSpriteRenderer;
+    [SerializeField] private SpriteRenderer bigCloneSpriteRenderer;
+    [SerializeField] private Transform playerAnchorPoint;
+
+    private Rigidbody2D player;
+    private SpriteRenderer playerSpriteRenderer;
     private Transform cloneCanvas;
     private Vector3 canvasOriginalPosition;
-    private bool isOnClone = false;
+    private Transform playerTransform;
+    private float originalGravity;
+    private bool isAttached = false;
 
-    void Start()
+    private void FixedUpdate()
     {
-        originalParent = this.transform.parent;
-        rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (!isAttached || player == null || playerAnchorPoint == null) return;
+
+        player.MovePosition(playerAnchorPoint.position);
+        player.MoveRotation(rb.rotation); 
+        player.linearVelocity = Vector2.zero;
     }
 
-    void Update()
+    private void Update()
     {
-        if (!isOnClone) return;
+        if (!isAttached) return;
 
         if (!GameManager.Instance.GetControlllingPlayer())
         {
-            rb.bodyType = RigidbodyType2D.Kinematic;
-            spriteRenderer.sortingOrder = 1;
-            if (cloneCanvas != null)
-                cloneCanvas.localPosition = canvasOriginalPosition + new Vector3(0, 0.5f, 0);
-            if (cloneSpriteRenderer != null)
-                spriteRenderer.flipX = cloneSpriteRenderer.flipX;
+            if (bigCloneSpriteRenderer != null && player != null)
+            {
+                bool cloneFacingRight = !bigCloneSpriteRenderer.flipX;
+                PlayerMovement pm = player.GetComponent<PlayerMovement>();
+                if (pm != null)
+                    pm.ForceFlipVisualOnly(cloneFacingRight);
+            }
         }
-        else
+
+        if (playerTransform != null)
+            playerTransform.rotation = transform.rotation;
+    }
+
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
-            spriteRenderer.sortingOrder = 3;
-            if (cloneCanvas != null)
-                cloneCanvas.localPosition = canvasOriginalPosition;
+            player = collision.attachedRigidbody;
+            playerSpriteRenderer = player.GetComponentInChildren<SpriteRenderer>();
+            playerTransform = player.transform;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("topCollision"))
+        if (collision.CompareTag("Player"))
         {
-            isOnClone = true;
-            cloneSpriteRenderer = GameManager.Instance.GetBigCloneSpriteRenderer();
+            player = null;
+            playerSpriteRenderer = null;
+            playerTransform = null;
+        }
+    }
+
+    public void AttachPlayer()
+    {
+        if (player == null) return;
+        isAttached = true;
+
+        originalGravity = player.gravityScale;
+        player.gravityScale = 0f;
+        player.linearVelocity = Vector2.zero;
+
+        if (cloneCanvas == null)
+        {
             cloneCanvas = GameManager.Instance.GetBigCloneCanvas();
             if (cloneCanvas != null)
                 canvasOriginalPosition = cloneCanvas.localPosition;
         }
+        if (playerSpriteRenderer != null)
+            playerSpriteRenderer.sortingOrder = 1;
+        if (cloneCanvas != null)
+            cloneCanvas.localPosition = canvasOriginalPosition + new Vector3(0, 0.5f, 0);
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    public void DetachPlayer()
     {
-        if (other.gameObject.CompareTag("topCollision") && !GameManager.Instance.GetControlllingPlayer() && this.transform.parent != other.transform.parent)
+        isAttached = false;
+
+        if (playerTransform != null)
+            playerTransform.rotation = Quaternion.identity;
+
+        if (player != null)
         {
-            this.transform.SetParent(other.transform.parent);
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            player.gravityScale = originalGravity;
+            player.MoveRotation(0f);
         }
+
+        if (playerSpriteRenderer != null)
+            playerSpriteRenderer.sortingOrder = 3;
+        if (cloneCanvas != null)
+            cloneCanvas.localPosition = canvasOriginalPosition;
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("topCollision"))
-        {
-            isOnClone = false;
-            cloneSpriteRenderer = null;
-            spriteRenderer.sortingOrder = 3;
-            if (cloneCanvas != null)
-                cloneCanvas.localPosition = canvasOriginalPosition;
-            cloneCanvas = null;
-            this.transform.SetParent(originalParent);
-            rb.bodyType = RigidbodyType2D.Dynamic;
-        }
-    }
+    public bool IsAtached() => player != null && isAttached;
 }

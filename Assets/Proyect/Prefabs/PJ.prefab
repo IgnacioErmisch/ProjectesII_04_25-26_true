@@ -50,7 +50,6 @@ GameObject:
   - component: {fileID: 89784438038261778}
   - component: {fileID: 4503241564842466741}
   - component: {fileID: 7218787180392879174}
-  - component: {fileID: -554269545037098886}
   m_Layer: 8
   m_Name: PJ
   m_TagString: Player
@@ -338,18 +337,6 @@ MonoBehaviour:
   bigCloneSpawner: {fileID: 7564787060841960555}
   smallCloneSpawner: {fileID: 7564787060841960555}
   energyController: {fileID: 5557642741559168900}
---- !u!114 &-554269545037098886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240527483314117475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de84b0bdcdcb964ca48d226e90600ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &258715426845299223
 GameObject:
   m_ObjectHideFlags: 0
@@ -5939,9 +5926,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1000457679
-  m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingLayerID: 679629863
+  m_SortingLayer: 4
+  m_SortingOrder: 6
   m_Sprite: {fileID: -427538135, guid: 0b4b24e22d2dacd4abc8629590cff863, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

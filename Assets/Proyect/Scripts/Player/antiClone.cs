@@ -8,8 +8,12 @@ public class AntiCloneZone : MonoBehaviour
     [SerializeField] private Color zoneColor = new Color(1f, 0f, 0f, 0.3f);
     private static HashSet<AntiCloneZone> allZones = new HashSet<AntiCloneZone>();
     private HashSet<GameObject> clonesInZone = new HashSet<GameObject>();
+    [SerializeField] private SoundManager soundManager;
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
 
-   
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("BigClone") || collision.CompareTag("SmallClone"))
@@ -36,6 +40,8 @@ public class AntiCloneZone : MonoBehaviour
                 break;
             }
         }
+
+        soundManager.PlaySFX(soundManager.antiCloneZone);
     }
 
     public bool IsPositionInAntiCloneZone(Vector3 position)

@@ -319,8 +319,23 @@ MonoBehaviour:
   movementBC: {fileID: 0}
   movementP: {fileID: 0}
   despawnClone: {fileID: 8300000, guid: bb6a8d9bc25ad9841a92b2df9c9401d8, type: 3}
+  bigCloneAttack: {fileID: 8300000, guid: 9c4cc62bba2e7534183ab3714129495a, type: 3}
+  redAttack: {fileID: 8300000, guid: d7583f082a5e8c142828cdf730aa60eb, type: 3}
+  blueAttack: {fileID: 8300000, guid: c74441e284b191941af86e36d1bb5739, type: 3}
+  buttonDoor: {fileID: 8300000, guid: 0ebc0417f87d3e1469235a558750a88f, type: 3}
+  changePosition: {fileID: 8300000, guid: a48bd7bf78168734d933b9bd725e9976, type: 3}
+  antiCloneZone: {fileID: 8300000, guid: a7f98f9f3c5a3be44a37452d731f51f3, type: 3}
+  antiGravity: {fileID: 8300000, guid: e9042ace90e0abe488bf8644ed045c2c, type: 3}
+  deactivateAntiCloneZone: {fileID: 8300000, guid: ddcf5ae36af05c04aa6fd34b9c021ef1, type: 3}
+  wallBreak: {fileID: 8300000, guid: e4671bd9b91560b409475ae0ecddcdc0, type: 3}
+  catapult: {fileID: 8300000, guid: 66275fc516bca8348b6cf82fb6d3ee5e, type: 3}
+  movingPlatform: {fileID: 8300000, guid: 7e4985a93cac09d4aa38d9a5e1d5b660, type: 3}
+  showPlatforms: {fileID: 8300000, guid: 5d50ecbdf9cb8db41b12df7ab51505fc, type: 3}
   musicSlider: {fileID: 0}
   sfxSlider: {fileID: 0}
+  selectButton: {fileID: 8300000, guid: b26b37b2d90d8774d8f3c20feb7cd926, type: 3}
+  clickButton: {fileID: 8300000, guid: bbb8d78837d4720459d70ed46ff54457, type: 3}
+  sfxMixerGroup: {fileID: 398947354316977177, guid: a1e6c5f046e8f6b4fb4c47c77c8dfa32, type: 2}
 --- !u!1 &7780479685084991648
 GameObject:
   m_ObjectHideFlags: 0
