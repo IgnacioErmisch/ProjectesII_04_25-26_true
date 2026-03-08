@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class mushroomsParticles : MonoBehaviour
+public class ParticlesDroper : MonoBehaviour
 {
     [SerializeField] float timeToReload = 5f;
         private float timer = 5f;
