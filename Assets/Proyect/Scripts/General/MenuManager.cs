@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MenuManager : MonoBehaviour
 {
@@ -19,11 +20,13 @@ public class MenuManager : MonoBehaviour
     private void OnEnable()
     {
         inputActions.Gameplay.Enable();
+        InputSystem.onDeviceChange += OnDeviceChange;
     }
 
     private void OnDisable()
     {
         inputActions.Gameplay.Disable();
+        InputSystem.onDeviceChange -= OnDeviceChange;
     }
 
     void Start()
@@ -37,6 +40,34 @@ public class MenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || inputActions.Gameplay.Pause.WasPressedThisFrame())
         {
             TogglePauseMenu();
+        }
+    }
+
+    private void OnDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        if (device is Gamepad)
+        {
+            if (change == InputDeviceChange.Added || change == InputDeviceChange.Reconnected)
+            {
+                StartCoroutine(SelectCurrentMenuButtonDelayed());
+            }
+        }
+    }
+
+    private IEnumerator SelectCurrentMenuButtonDelayed()
+    {
+        yield return null;
+
+
+        if (bindsMenu.activeInHierarchy)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(backButton);
+        }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(showBindsButton);
         }
     }
 
@@ -56,7 +87,6 @@ public class MenuManager : MonoBehaviour
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(showBindsButton);
             }
-               
             Time.timeScale = 0;
         }
     }
@@ -75,7 +105,6 @@ public class MenuManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(backButton);
         }
-           
     }
 
     public void CloseBindsMenu()
@@ -86,6 +115,5 @@ public class MenuManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(showBindsButton);
         }
-          
     }
 }
