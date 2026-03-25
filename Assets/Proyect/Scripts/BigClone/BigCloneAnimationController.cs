@@ -6,6 +6,7 @@ public class BigCloneAnimationController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private BigCloneController bigCloneController;
     [SerializeField] private BigCloneWallDestroyer bigCloneWallDestroyer;
+    [SerializeField] private BigCloneJump cloneJump;
     [SerializeField] private BigCloneAttack bigCloneAttack;
     public BigCloneMovement movement;
 
@@ -23,6 +24,7 @@ public class BigCloneAnimationController : MonoBehaviour
     {
         PlayWalkAnimation();
         PlayAttackAnimation();
+        PlayJumpAnimation();
         
     }
 
@@ -35,13 +37,26 @@ public class BigCloneAnimationController : MonoBehaviour
     {
         if (movement != null && movement.isMoving)
         {
-            
+
             animator.SetBool("isWalking", true);
 
         }
         else
         {
             animator.SetBool("isWalking", false);
+        }
+    }
+
+    private void PlayJumpAnimation()
+    {
+        if (cloneJump.isJumping)
+        {
+            animator.SetBool("isJumping", true);
+
+        }
+        else
+        {
+            animator.SetBool("isJumping", false);
         }
     }
     private void PlayAttackAnimation()
@@ -62,6 +77,7 @@ public class BigCloneAnimationController : MonoBehaviour
     {
         animator.SetBool("isWalking", false);
         animator.SetBool("isAttacking", false);
+        animator.SetBool("isJumping", false);
     }
 
 }

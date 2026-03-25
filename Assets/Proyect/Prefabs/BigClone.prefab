@@ -10553,6 +10553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3671420164355731873}
   bigCloneController: {fileID: 6064560242407736156}
+  cloneJump: {fileID: 6662874760695442228}
   bigCloneAttack: {fileID: 2940650665584716740}
 --- !u!1001 &2406908565268249272
 PrefabInstance:
