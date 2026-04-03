@@ -33,7 +33,6 @@ public class BigCloneJump : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private PlayerMovement movement;
-    [SerializeField] private PerspectiveSwitch perspectiveSwitch;
     [SerializeField] private ParticleSystem jumpParticles;
     [SerializeField] private ParticleSystem landParticles;
     [SerializeField] private ParticleSystem runParticles;
@@ -47,7 +46,6 @@ public class BigCloneJump : MonoBehaviour
     public bool isGrounded { get; private set; }
     public int jumpCounter = 0;
 
-
     public float coyoteCounter;
     private float jumpBufferCounter;
     private float apexHangCounter;
@@ -56,13 +54,11 @@ public class BigCloneJump : MonoBehaviour
     private bool isAtApex;
     private bool jumpHeld;
     private bool jumpCut;
-    private bool wasJumpPressed;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
-
         inputActions = new Controller();
     }
 
@@ -76,37 +72,25 @@ public class BigCloneJump : MonoBehaviour
         inputActions.Gameplay.Disable();
     }
 
-    private void Update()
+    public void UpdateJump(bool canControl)
     {
         wasGrounded = isGrounded;
         isGrounded = CheckGround();
 
         if (isGrounded && !wasGrounded)
-        {
             OnLand();
-        }
-
 
         if (!isGrounded && !isJumping)
-        {
             coyoteCounter -= Time.deltaTime;
-        }
-
 
         bool jumpPressed = inputActions.Gameplay.Jump.triggered;
 
         if (jumpPressed)
-        {
             jumpBufferCounter = jumpBufferTime;
-        }
         else
-        {
             jumpBufferCounter -= Time.deltaTime;
-        }
 
         jumpHeld = inputActions.Gameplay.Jump.IsPressed();
-
-        bool canControl = perspectiveSwitch == null || perspectiveSwitch.GetControllingPlayer();
 
         if (canControl)
         {
@@ -117,14 +101,11 @@ public class BigCloneJump : MonoBehaviour
             }
 
             if (rb.linearVelocity.y > 0f && !jumpCut)
-            {
                 CutJump();
-            }
         }
 
         CheckApex();
         UpdateParticles();
-
     }
 
     private void FixedUpdate()
@@ -142,13 +123,9 @@ public class BigCloneJump : MonoBehaviour
     private bool CanJump()
     {
         if (jumpCounter == 0)
-        {
             return isGrounded || coyoteCounter > 0f;
-        }
         else
-        {
             return jumpCounter < maxJumps;
-        }
     }
 
     private void PerformJump()
@@ -156,15 +133,11 @@ public class BigCloneJump : MonoBehaviour
         soundManager.PlaySFX(soundManager.jump);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         jumpCounter++;
-
         isJumping = true;
         jumpCut = false;
 
         if (jumpParticles != null && jumpCounter > 1)
-        {
             jumpParticles.Play();
-        }
-
     }
 
     private void CutJump()
@@ -175,7 +148,6 @@ public class BigCloneJump : MonoBehaviour
 
     private void CheckApex()
     {
-
         if (Mathf.Abs(rb.linearVelocity.y) < apexThreshold && !isGrounded)
         {
             if (!isAtApex)
@@ -190,41 +162,25 @@ public class BigCloneJump : MonoBehaviour
         }
 
         if (isAtApex && apexHangCounter > 0f)
-        {
             apexHangCounter -= Time.deltaTime;
-        }
     }
 
     private void ApplyGravityModifiers()
     {
-
         if (isAtApex && apexHangCounter > 0f)
-        {
             rb.gravityScale = normalGravityScale * apexGravityMultiplier;
-        }
-
         else if (rb.linearVelocity.y < 0f)
-        {
             rb.gravityScale = normalGravityScale * fallGravityMultiplier;
-        }
-
         else if (rb.linearVelocity.y > 0f && !jumpHeld)
-        {
             rb.gravityScale = normalGravityScale * lowJumpMultiplier;
-        }
-
         else
-        {
             rb.gravityScale = normalGravityScale;
-        }
     }
 
     private void ClampFallSpeed()
     {
         if (rb.linearVelocity.y < -maxFallSpeed)
-        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, -maxFallSpeed);
-        }
     }
 
     private void OnLand()
@@ -234,41 +190,23 @@ public class BigCloneJump : MonoBehaviour
         jumpCounter = 0;
         coyoteCounter = coyoteTime;
         if (landParticles != null)
-        {
             landParticles.Play();
-        }
     }
 
     private void UpdateParticles()
     {
-
         if (runParticles != null && movement != null)
         {
             if (isGrounded && movement.isMoving && !runParticles.isPlaying)
-            {
                 runParticles.Play();
-            }
             else if ((!isGrounded || !movement.isMoving) && runParticles.isPlaying)
-            {
                 runParticles.Stop();
-            }
         }
     }
 
-    public bool IsAtApex()
-    {
-        return isAtApex;
-    }
-
-    public int GetJumpCount()
-    {
-        return jumpCounter;
-    }
-
-    public float GetVerticalVelocity()
-    {
-        return rb != null ? rb.linearVelocity.y : 0f;
-    }
+    public bool IsAtApex() => isAtApex;
+    public int GetJumpCount() => jumpCounter;
+    public float GetVerticalVelocity() => rb != null ? rb.linearVelocity.y : 0f;
 
     private void OnDrawGizmosSelected()
     {

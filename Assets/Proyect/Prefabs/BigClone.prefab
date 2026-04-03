@@ -5090,6 +5090,7 @@ MonoBehaviour:
   attackPoint: {fileID: 0}
   perspectiveSwitch: {fileID: 0}
   bigCloneAttack: {fileID: 2940650665584716740}
+  bigCloneJump: {fileID: 6662874760695442228}
   energyImage: {fileID: 1142632818159327263}
   canvas: {fileID: 1813597808420507997}
   rideBigClone: {fileID: 6005268517648250462}
@@ -5330,7 +5331,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   movement: {fileID: 0}
-  perspectiveSwitch: {fileID: 0}
   jumpParticles: {fileID: 0}
   landParticles: {fileID: 3318715616333774567}
   runParticles: {fileID: 0}

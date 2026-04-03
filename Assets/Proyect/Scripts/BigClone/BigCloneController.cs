@@ -24,6 +24,7 @@ public class BigCloneController : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private PerspectiveSwitch perspectiveSwitch;
     [SerializeField] private BigCloneAttack bigCloneAttack;
+    [SerializeField] private BigCloneJump bigCloneJump;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -39,7 +40,6 @@ public class BigCloneController : MonoBehaviour
     [SerializeField] private RideBigClone rideBigClone;
     [SerializeField] private SoundManager soundManager;
 
-
     private void Awake()
     {
         InitializeComponents();
@@ -48,7 +48,6 @@ public class BigCloneController : MonoBehaviour
         GameManager.Instance.SetBigCloneEnergy(energyImage);
         GameManager.Instance.SetBigCloneCanvas(canvas);
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
-
     }
 
     private void OnDestroy()
@@ -63,7 +62,6 @@ public class BigCloneController : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         stats = new BigCloneStats();
 
-       
         movement = new BigCloneMovement(
             rb,
             stats,
@@ -92,7 +90,11 @@ public class BigCloneController : MonoBehaviour
 
     private void Update()
     {
-        if (movement != null && !perspectiveSwitch.GetControllingPlayer())
+        bool canControl = !perspectiveSwitch.GetControllingPlayer();
+
+        bigCloneJump.UpdateJump(canControl);
+
+        if (movement != null && canControl)
         {
             movement.UpdateMovement();
         }
@@ -105,7 +107,7 @@ public class BigCloneController : MonoBehaviour
 
             if (wasTouchingWall && !wallContactDetector.IsTouchingWall())
             {
-                soundManager.PlaySFX(soundManager.wallBreak); 
+                soundManager.PlaySFX(soundManager.wallBreak);
             }
 
             if (wallContactDetector.IsTouchingWall() && bigCloneAttack.isDashing)
@@ -117,9 +119,11 @@ public class BigCloneController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool canControl = !perspectiveSwitch.GetControllingPlayer();
+
         if (movement != null)
         {
-            movement.Move(!perspectiveSwitch.GetControllingPlayer());
+            movement.Move(canControl);
         }
         else
         {
