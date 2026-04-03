@@ -130,9 +130,9 @@ GameObject:
   - component: {fileID: 5367128895997040900}
   - component: {fileID: 1681722008749901626}
   - component: {fileID: 2075444078377483104}
-  - component: {fileID: 3040771992612995455}
   - component: {fileID: -6818111625367319820}
   - component: {fileID: 8627000524019962169}
+  - component: {fileID: 526479715337141370}
   m_Layer: 11
   m_Name: SmallClone
   m_TagString: SmallClone
@@ -215,8 +215,39 @@ MonoBehaviour:
   maxJumps: 2
   coyoteTime: 0.5
   jumpCounter: 0
---- !u!70 &3040771992612995455
-CapsuleCollider2D:
+--- !u!114 &-6818111625367319820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887023663289730442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46dfa8a320ed19a4c8b7e105dbf02370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpDamage: 25
+  jumpForce: 25
+  dashKnockbackForce: 0
+--- !u!114 &8627000524019962169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887023663289730442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee32964def20f64ba6f9ad97579bb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7360480934236382808}
+  groundCheck: {fileID: 0}
+  invertedYOffset: -0.6
+  groundCheckInvertedOffset: -0.1
+--- !u!61 &526479715337141370
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -249,40 +280,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.008382797, y: -0.40180075}
-  m_Size: {x: 0.9580803, y: 1.5771334}
-  m_Direction: 0
---- !u!114 &-6818111625367319820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887023663289730442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46dfa8a320ed19a4c8b7e105dbf02370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpDamage: 25
-  jumpForce: 25
-  dashKnockbackForce: 0
---- !u!114 &8627000524019962169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887023663289730442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee32964def20f64ba6f9ad97579bb05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 7360480934236382808}
-  groundCheck: {fileID: 0}
-  invertedYOffset: -0.6
-  groundCheckInvertedOffset: -0.1
+  m_Offset: {x: 0.032523155, y: -0.46616137}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.83377266, y: 1.3541381}
+  m_EdgeRadius: 0
 --- !u!1 &5316104002196046662
 GameObject:
   m_ObjectHideFlags: 0
