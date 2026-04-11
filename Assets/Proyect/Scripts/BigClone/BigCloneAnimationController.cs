@@ -23,9 +23,9 @@ public class BigCloneAnimationController : MonoBehaviour
     void Update()
     {
         PlayWalkAnimation();
-        PlayAttackAnimation();
         PlayJumpAnimation();
-        
+        PlayAttackAnimation();
+
     }
 
     private void Initialize()
@@ -66,6 +66,7 @@ public class BigCloneAnimationController : MonoBehaviour
         {
 
             animator.SetBool("isAttacking", true);
+            animator.SetBool("isJumping", false);
 
         }
         else
