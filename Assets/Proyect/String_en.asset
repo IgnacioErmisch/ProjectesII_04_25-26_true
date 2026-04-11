@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: String_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 599a3f796e20b2b4e8a8c7ca0cffc36d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1723083517952
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1675415252992
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1618200752128
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16481056714752
+    m_Localized: MUSIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16826445066240
+    m_Localized: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19267962007552
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26903591776256
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30940642930688
+    m_Localized: EARTH CAVE LEVELS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30983231893504
+    m_Localized: ICE CAVE LEVELS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30986142740480
+    m_Localized: GRASS LEVELS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30987887570944
+    m_Localized: SNOW LEVELS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37099873497088
+    m_Localized: Big Clone can kill RED enemies with his dash!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42887337734144
+    m_Localized: Small Clone can kill BLUE enemies jumping on their head!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
