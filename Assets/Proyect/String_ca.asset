@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16481056714752
-    m_Localized: MUSICA
+    m_Localized: "M\xDASICA"
     m_Metadata:
       m_Items: []
   - m_Id: 16826445066240
@@ -71,6 +71,44 @@ MonoBehaviour:
   - m_Id: 42887337734144
     m_Localized: El Clon Petit pot matar els enemics BLAU saltant sobre els seus
       caps!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 654944777007104
+    m_Localized: El jugador pot utilitzar el cap del Clon Gran per arribar a llocs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 656940435238912
+    m_Localized: "Canvia la perspectiva de la c\xE0mera"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659452475207680
+    m_Localized: El jugador pot muntar el Gran Clon i caminar sobre les punxes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663089716916224
+    m_Localized: "Col\xB7loca un clon per moure la plataforma"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663734624710656
+    m_Localized: "Col\xB7loca el jugador o un clon per mostrar les plataformes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 664297315758080
+    m_Localized: Pots intercanviar posicions entre clon i jugador amb aquest objecte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665929319444480
+    m_Localized: El Clon Petit pot entrar a la zona d'antigravetat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668170759696384
+    m_Localized: Els clons no poden travessar el camp anticlon, s'ha de desactivar
+      amb el jugador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 669081993211904
+    m_Localized: "Els enemics NEGRES no es poden matar, escapa'n tan r\xE0pid com
+      puguis"
     m_Metadata:
       m_Items: []
   references:

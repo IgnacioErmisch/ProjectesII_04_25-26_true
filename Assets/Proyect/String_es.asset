@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16481056714752
-    m_Localized: MUSICA
+    m_Localized: "M\xDASICA"
     m_Metadata:
       m_Items: []
   - m_Id: 16826445066240
@@ -69,6 +69,46 @@ MonoBehaviour:
   - m_Id: 42887337734144
     m_Localized: "\xA1El Clon Peque\xF1o puede matar a los enemigos AZULES saltando
       sobre sus cabezas!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 654944777007104
+    m_Localized: El jugador puede usar la cabeza de el Clon Grande para llegar a
+      lugares.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 656940435238912
+    m_Localized: "Cambiar la perspectiva de la c\xE1mara"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659452475207680
+    m_Localized: El jugador puede montar el Clon Grande y caminar sobre los pinchos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663089716916224
+    m_Localized: Coloca un clon para mover la plataforma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663734624710656
+    m_Localized: Coloca al jugador o a un clon para mostrar las plataformas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 664297315758080
+    m_Localized: Puedes intercambiar posiciones entre el clon y el jugador con este
+      objeto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665929319444480
+    m_Localized: "El Clon Peque\xF1o puede entrar en la zona antigravedad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668170759696384
+    m_Localized: Los clones no pueden atravesar el campo anticlon, debes desactivarlo
+      con el jugador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 669081993211904
+    m_Localized: "Los enemigos NEGROS no pueden ser matados, escapa de ellos lo m\xE1s
+      r\xE1pido que puedas"
     m_Metadata:
       m_Items: []
   references:
