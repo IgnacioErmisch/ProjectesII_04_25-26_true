@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxSpeed: 0.0373
+  verticalSmoothFactor: 0.02
 --- !u!1 &8074660789686536256
 GameObject:
   m_ObjectHideFlags: 0
