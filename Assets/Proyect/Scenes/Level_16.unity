@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 29703136}
   - component: {fileID: 29703138}
   - component: {fileID: 29703137}
+  - component: {fileID: 29703139}
   m_Layer: 5
   m_Name: HeadText
   m_TagString: Untagged
@@ -151,10 +152,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1798986835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.30740982, y: 0.36122626}
+  m_AnchorMin: {x: 0.3082666, y: 0.34882906}
   m_AnchorMax: {x: 0.36800003, y: 0.384}
-  m_AnchoredPosition: {x: 0.047052383, y: -0.014936447}
-  m_SizeDelta: {x: -0.10217733, y: -0.09162582}
+  m_AnchoredPosition: {x: 0.0004940033, y: -0.0047836304}
+  m_SizeDelta: {x: -0.0010092836, y: -0.11192905}
   m_Pivot: {x: 0.49999887, y: 0.5}
 --- !u!114 &29703137
 MonoBehaviour:
@@ -255,6 +256,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29703135}
   m_CullTransparentMesh: 1
+--- !u!114 &29703139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29703135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:599a3f796e20b2b4e8a8c7ca0cffc36d
+    m_TableEntryReference:
+      m_KeyId: 665929319444480
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 29703137}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &299810216
 GameObject:
   m_ObjectHideFlags: 0
@@ -5491,7 +5532,7 @@ Tilemap:
       - {fileID: -335280785, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 964844924, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 877375751, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: 0, z: 0}

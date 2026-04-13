@@ -70,6 +70,44 @@ MonoBehaviour:
     m_Localized: Small Clone can kill BLUE enemies jumping on their head!
     m_Metadata:
       m_Items: []
+  - m_Id: 654944777007104
+    m_Localized: Player can use Big Clone's head to reach places
+    m_Metadata:
+      m_Items: []
+  - m_Id: 656940435238912
+    m_Localized: Change camera perspective
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659452475207680
+    m_Localized: Player can ride Big Clone and walk on the spikes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663089716916224
+    m_Localized: Place a clone to move the platform
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663734624710656
+    m_Localized: Place the player or a clone to show the platforms
+    m_Metadata:
+      m_Items: []
+  - m_Id: 664297315758080
+    m_Localized: You can swap positions between clone and player with this object
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665929319444480
+    m_Localized: Small Clone can enter the Antigravity zone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668170759696384
+    m_Localized: Clones can't get through the anti-clone field, you must deactivate
+      it with the player
+    m_Metadata:
+      m_Items: []
+  - m_Id: 669081993211904
+    m_Localized: The BLACK enemies can't be killed, escape from them as fast as you
+      can
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
