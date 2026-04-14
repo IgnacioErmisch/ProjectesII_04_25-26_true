@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     }
     public bool GetCloneActive()
     {
-        return cloneSpawner.cloneActive;
+        return cloneSpawner.CloneActive;
     }
     public void SetBigCloneEnergy(GameObject energyBigCloneImage)
     {

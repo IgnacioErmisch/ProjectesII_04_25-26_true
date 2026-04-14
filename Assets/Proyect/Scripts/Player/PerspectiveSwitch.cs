@@ -107,11 +107,11 @@ public class PerspectiveSwitch : MonoBehaviour
 
     private CloneSpawner GetActiveSpawner()
     {
-        if (bigCloneSpawner.cloneActive)
+        if (bigCloneSpawner.CloneActive)
         {
             return bigCloneSpawner;
         }
-        else if (smallCloneSpawner.cloneActive)
+        else if (smallCloneSpawner.CloneActive)
         {
             return smallCloneSpawner;
         }

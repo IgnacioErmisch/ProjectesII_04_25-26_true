@@ -54,6 +54,6 @@ public class InputSpawnClone : MonoBehaviour
 
     public bool IsAnyCloneActive()
     {
-        return CloneSpawner.cloneActive;
+        return CloneSpawner.CloneActive;
     }
 }
