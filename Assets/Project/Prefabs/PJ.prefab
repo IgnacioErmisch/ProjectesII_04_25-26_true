@@ -97,7 +97,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10000
+  m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 2.5
@@ -201,16 +201,15 @@ MonoBehaviour:
   switchInterface: {fileID: 0}
   cloneSmallPrefab: {fileID: 1887023663289730442, guid: 7123dcf322269324eace1f4f9ac51578, type: 3}
   cloneBigPrefab: {fileID: 6003483819887161510, guid: 278fdf5f4d49e4049aa0a26d00d576e4, type: 3}
-  isSmallClone: 0
-  spawners: []
   cloneSpawnPointPrincipal: {fileID: 487263047496622441}
   cloneSpawnPointPrincipalUp: {fileID: 4626854184333144950}
   cloneSpawnPointSecondary: {fileID: 2756181877665876585}
-  playerCamera: {fileID: 6773113138284326154}
-  cloneActive: 0
+  isSmallClone: 0
+  otherSpawners: []
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  playerCamera: {fileID: 6773113138284326154}
 --- !u!114 &4502971120696559688
 MonoBehaviour:
   m_ObjectHideFlags: 0
