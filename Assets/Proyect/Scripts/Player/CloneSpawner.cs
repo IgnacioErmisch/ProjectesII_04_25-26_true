@@ -28,7 +28,8 @@ public class CloneSpawner : MonoBehaviour
 
     public bool TrySpawnClone()
     {
-       
+       if(Time.timeScale == 0) return false;
+
         foreach (var spawner in spawners)
         {
             if (spawner.cloneActive)
@@ -141,6 +142,8 @@ public class CloneSpawner : MonoBehaviour
     }
     public bool TryDespawnClone()
     {
+        if(Time.timeScale == 0) return false;
+
         if (!cloneActive)
             return false;
 
