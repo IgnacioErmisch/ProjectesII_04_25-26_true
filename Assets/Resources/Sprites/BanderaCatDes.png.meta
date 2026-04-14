@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 654b38cb416819341987b072e8fd60da
+guid: f5def54836aac044086f7f703dfdca16
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9032587216786927319
-    second: Aura Test_0
+      213: -1024534744286727825
+    second: BanderaCatDes_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Aura Test_0
+      name: BanderaCatDes_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 574
-        height: 564
+        width: 17
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9215ea478cdc5a280800000000000000
-      internalID: -9032587216786927319
+      spriteID: f617eba041f18c1f0800000000000000
+      internalID: -1024534744286727825
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Aura Test_0: -9032587216786927319
+      BanderaCatDes_0: -1024534744286727825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

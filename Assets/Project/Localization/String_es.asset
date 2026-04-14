@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16481056714752
-    m_Localized: "M\xDASICA"
+    m_Localized: MUSICA
     m_Metadata:
       m_Items: []
   - m_Id: 16826445066240
@@ -77,7 +77,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 656940435238912
-    m_Localized: "Cambiar la perspectiva de la c\xE1mara"
+    m_Localized: Cambiar la perspectiva de la camara
     m_Metadata:
       m_Items: []
   - m_Id: 659452475207680
