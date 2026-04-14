@@ -41,9 +41,9 @@ public class ShowEnergy : MonoBehaviour
         {
            
             energyPlayer.SetActive(true);
-            if (energyBigClone != null && bigCloneSpawner.cloneActive) 
+            if (energyBigClone != null && bigCloneSpawner.CloneActive) 
                 energyBigClone.SetActive(false);
-            if (energySmallClone != null && smallCloneSpawner.cloneActive) 
+            if (energySmallClone != null && smallCloneSpawner.CloneActive) 
                 energySmallClone.SetActive(false);
         
         }
@@ -51,17 +51,17 @@ public class ShowEnergy : MonoBehaviour
         if (!perspectiveSwitch.controllingPlayer)
         {
             energyPlayer.SetActive(false);
-            if (energyBigClone != null && bigCloneSpawner.cloneActive)
+            if (energyBigClone != null && bigCloneSpawner.CloneActive)
             {
                 energyBigClone.SetActive(true);
             }
-            if (energySmallClone != null && smallCloneSpawner.cloneActive)
+            if (energySmallClone != null && smallCloneSpawner.CloneActive)
             {
                 energySmallClone.SetActive(true);
             }
         }
 
-        if (!bigCloneSpawner.cloneActive && !smallCloneSpawner.cloneActive && energyController.GetCurrentEnergy() == energyController.GetMaxEnergy())
+        if (!bigCloneSpawner.CloneActive && !smallCloneSpawner.CloneActive && energyController.GetCurrentEnergy() == energyController.GetMaxEnergy())
         {
 
             energyPlayer.SetActive(false);

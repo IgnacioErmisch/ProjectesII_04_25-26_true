@@ -108,9 +108,9 @@ public class PositionSwapBlock : MonoBehaviour
 
     private CloneSpawner GetActiveSpawner()
     {
-        if (bigCloneSpawner != null && bigCloneSpawner.cloneActive)
+        if (bigCloneSpawner != null && bigCloneSpawner.CloneActive)
             return bigCloneSpawner;
-        else if (smallCloneSpawner != null && smallCloneSpawner.cloneActive)
+        else if (smallCloneSpawner != null && smallCloneSpawner.CloneActive)
             return smallCloneSpawner;
 
         return null;

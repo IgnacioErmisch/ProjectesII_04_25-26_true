@@ -1,193 +1,189 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CloneSpawner : MonoBehaviour
 {
+    [Header("Dependencies")]
     [SerializeField] private EnergyController energyController;
     [SerializeField] private PerspectiveSwitch perspectiveSwitch;
     [SerializeField] private CinemachineSingleton cinemachineSingleton;
     [SerializeField] private SwitchInterface switchInterface;
+
+    [Header("Prefabs")]
     [SerializeField] private GameObject cloneSmallPrefab;
     [SerializeField] private GameObject cloneBigPrefab;
-    [SerializeField] private bool isSmallClone = true;
-    [SerializeField] private CloneSpawner[] spawners;
+
+    [Header("Spawn Points")]
     [SerializeField] private Transform cloneSpawnPointPrincipal;
     [SerializeField] private Transform cloneSpawnPointPrincipalUp;
     [SerializeField] private Transform cloneSpawnPointSecondary;
-    
-    SoundManager soundManager;
+
+    [Header("Config")]
+    [SerializeField] private bool isSmallClone = true;
+    [SerializeField] private CloneSpawner[] otherSpawners;
+    [SerializeField] private LayerMask groundLayer;
+
+    [Header("Camera")]
     public Camera playerCamera;
+
+    private Vector2 SmallCloneSize = new Vector2(0.5f, 0.5f);
+    private Vector2 BigCloneSize = new Vector2(0.8f, 1.6f);
+
+    private Vector3 CameraLocalPosition = new Vector3(2f, 1f, -5f);
+    private Vector3 CameraLocalPositionPlayer = new Vector3(2f, 2f, -5f);
+
     private GameObject currentClone;
-    public bool cloneActive = false;
-    private bool canSpawnBigClone = true;
-    public LayerMask groundLayer;
+    private SoundManager soundManager;
+   
+
+    public bool CloneActive { get; private set; } = false;
+
+   
     private void Awake()
     {
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
     }
-
-    public bool TrySpawnClone()
-    {
-       if(Time.timeScale == 0) return false;
-
-        foreach (var spawner in spawners)
-        {
-            if (spawner.cloneActive)
-                return false;
-        }
-
-        if (cloneActive)
-            return false;
-
-        Vector3 spawnPosition = cloneSpawnPointPrincipal.position;
-          
-        if (!energyController.TryConsumeInitialCost(isSmallClone))
-            return false;
-
-        Vector3 direction = spawnPosition - transform.position;
-        float distance = direction.magnitude;
-        direction.Normalize();
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, groundLayer);
-        if(!Physics2D.Raycast(transform.position, direction, distance, groundLayer))
-        {
-            if(switchInterface.IsBigCloneSelected)
-            {
-                if(CheckColisionSpawn()) return false;
-                if(!canSpawnBigClone) return false;
-
-                currentClone = Instantiate(cloneBigPrefab, spawnPosition + Vector3.up, Quaternion.identity);
-                energyController.RegisterClone(currentClone, isSmallClone);
-            }
-            else if (!switchInterface.IsBigCloneSelected)
-            { 
-
-                currentClone = Instantiate(cloneSmallPrefab, spawnPosition , Quaternion.identity);
-                energyController.RegisterClone(currentClone, isSmallClone);
-            }
-            cloneActive = true;
-            playerCamera.transform.SetParent(currentClone.transform);
-            playerCamera.transform.localPosition = new Vector3(2, 1, -5);
-            perspectiveSwitch.SwitchToClone();
-            soundManager.PlaySFX(soundManager.spawnClon);
-
-            return true;
-        }
-        else
-        {
-            Vector3 spawnPositionSecondary = cloneSpawnPointSecondary.position;
-            
-            if (switchInterface.IsBigCloneSelected)
-            { 
-                currentClone = Instantiate(cloneBigPrefab, spawnPositionSecondary + Vector3.up, Quaternion.identity);
-                energyController.RegisterClone(currentClone, isSmallClone);
-            }
-            else if(!switchInterface.IsBigCloneSelected)
-            { 
-                currentClone = Instantiate(cloneSmallPrefab, spawnPositionSecondary, Quaternion.identity);
-                energyController.RegisterClone(currentClone, isSmallClone);
-            }
-            cloneActive = true;
-            playerCamera.transform.SetParent(currentClone.transform);
-            playerCamera.transform.localPosition = new Vector3(2, 1, -5);
-            perspectiveSwitch.SwitchToClone();
-            
-            return true;
-        }
-    }
+   
 
     private void OnDrawGizmos()
     {
-        Vector3 spawnPosition = cloneSpawnPointPrincipal.position;
-        Gizmos.DrawLine(transform.position, spawnPosition);
-        Vector3 direction = spawnPosition - transform.position;
-        float distance = direction.magnitude;
-        direction.Normalize();
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, groundLayer);
-        if (hit.rigidbody != null)
-        {
-            Gizmos.DrawSphere((Vector3)hit.point, 0.2f);
-        }
-        else
-        {
-            Gizmos.DrawSphere(spawnPosition, 0.2f);
-        }
-        Vector3 spawnPosition2 = cloneSpawnPointPrincipalUp.position;
-        Gizmos.DrawLine(transform.position, spawnPosition2);
-        Vector3 direction2 = spawnPosition2 - transform.position;
-        float distance2 = direction2.magnitude;
-        direction2.Normalize();
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position, direction2, distance2, groundLayer);
-        if (hit2.rigidbody != null)
-        {
-            Gizmos.DrawSphere((Vector3)hit2.point, 0.2f);
-        }
-        else
-        {
-            Gizmos.DrawSphere(spawnPosition2, 0.2f);
-        }
-        
+        DrawSpawnGizmo(cloneSpawnPointPrincipal);
+        DrawSpawnGizmo(cloneSpawnPointPrincipalUp);
     }
 
-    bool CheckColisionSpawn()
+ 
+
+    public bool TrySpawnClone()
     {
-        Vector3 spawnPosition = cloneSpawnPointPrincipalUp.position;
-        Vector3 direction = spawnPosition - transform.position;
-        float distance = direction.magnitude;
-        direction.Normalize();
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, groundLayer);
-        if (hit.rigidbody != null)
-            return true;
-        else
+        if (!CanSpawn()) return false;
+        if (!energyController.TryConsumeInitialCost(isSmallClone)) return false;
+
+        bool isBig = switchInterface.IsBigCloneSelected;
+
+        if (isBig && (CheckColisionSpawn()))
             return false;
+
+        Vector3? spawnPosition = ResolveSpawnPosition(isBig);
+        if (spawnPosition == null) return false;
+
+        SpawnClone(isBig, spawnPosition.Value);
+        return true;
     }
+
     public bool TryDespawnClone()
     {
-        if(Time.timeScale == 0) return false;
+        if (!CloneActive || currentClone == null) return false;
 
-        if (!cloneActive)
-            return false;
-
-        if (currentClone != null)
-        {        
-            playerCamera.transform.SetParent(gameObject.transform);
-            playerCamera.transform.localPosition = new Vector3(2, 2, -5);
-            perspectiveSwitch.SwitchToPlayer();
-            energyController.UnregisterClone(currentClone);
-            Destroy(currentClone);
-            currentClone = null;
-            cloneActive = false;
-            return true;
-        }
-
-        return false;
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
-        {         
-            canSpawnBigClone = false;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        canSpawnBigClone = true;
+        ReturnCameraToPlayer();
+        energyController.UnregisterClone(currentClone);
+        Destroy(currentClone);
+        currentClone = null;
+        CloneActive = false;
+        return true;
     }
 
-    public GameObject GetCurrentClone()
-    {
-        return currentClone;
-    }
-    public bool GetActiveClone()
-    {
-        return cloneActive;
-    }
     public void RegisterExternalClone(GameObject clone, bool isSmall)
     {
         currentClone = clone;
-        cloneActive = true;      
+        CloneActive = true;
         energyController.RegisterClone(clone, isSmall);
-        playerCamera.transform.SetParent(clone.transform);
-        playerCamera.transform.localPosition = new Vector3(2, 1, -5);   
+        AttachCameraToClone(clone);
         perspectiveSwitch.SwitchToClone();
+    }
+
+    public GameObject GetCurrentClone() => currentClone;
+    public bool GetActiveClone() => CloneActive;
+
+  
+    private bool CanSpawn()
+    {
+        if (CloneActive) return false;
+
+        foreach (var spawner in otherSpawners)
+            if (spawner.CloneActive) return false;
+
+        return true;
+    }
+
+   
+    private Vector3? ResolveSpawnPosition(bool isBig)
+    {
+        Vector3 principal = cloneSpawnPointPrincipal.position;
+        Vector3 secondary = cloneSpawnPointSecondary.position;
+
+        Vector2 cloneSize = isBig ? BigCloneSize : SmallCloneSize;
+        float heightOffset = isBig ? 1f : 0f;
+
+        if (IsSpawnPositionValid(principal, cloneSize, heightOffset))
+            return principal + Vector3.up * heightOffset;
+
+        if (IsSpawnPositionValid(secondary, cloneSize, heightOffset))
+            return secondary + Vector3.up * heightOffset;
+
+        return null;
+    }
+
+   
+    private bool IsSpawnPositionValid(Vector3 targetPosition, Vector2 size, float heightOffset)
+    {
+        if (IsPathBlocked(transform.position, targetPosition))
+            return false;
+
+        Vector3 finalPos = targetPosition + Vector3.up * heightOffset;
+        return !Physics2D.OverlapBox(finalPos, size, 0f, groundLayer);
+    }
+
+    private void SpawnClone(bool isBig, Vector3 position)
+    {
+        GameObject prefab = isBig ? cloneBigPrefab : cloneSmallPrefab;
+        currentClone = Instantiate(prefab, position, Quaternion.identity);
+        energyController.RegisterClone(currentClone, isSmallClone);
+
+        CloneActive = true;
+        AttachCameraToClone(currentClone);
+        perspectiveSwitch.SwitchToClone();
+        soundManager.PlaySFX(soundManager.spawnClon);
+    }
+
+   
+    private bool CheckColisionSpawn()
+    {
+        return IsPathBlocked(transform.position, cloneSpawnPointPrincipalUp.position);
+    }
+
+    private bool IsPathBlocked(Vector3 from, Vector3 to)
+    {
+        Vector3 direction = to - from;
+        float distance = direction.magnitude;
+        RaycastHit2D hit = Physics2D.Raycast(from, direction.normalized, distance, groundLayer);
+        return hit.collider != null;
+    }
+
+    private bool IsGroundLayer(int layer) => ((1 << layer) & groundLayer) != 0;
+
+    private void AttachCameraToClone(GameObject clone)
+    {
+        playerCamera.transform.SetParent(clone.transform);
+        playerCamera.transform.localPosition = CameraLocalPosition;
+    }
+
+    private void ReturnCameraToPlayer()
+    {
+        playerCamera.transform.SetParent(transform);
+        playerCamera.transform.localPosition = CameraLocalPositionPlayer;
+        perspectiveSwitch.SwitchToPlayer();
+    }
+
+    private void DrawSpawnGizmo(Transform spawnPoint)
+    {
+        if (spawnPoint == null) return;
+
+        Vector3 target = spawnPoint.position;
+        Vector3 direction = target - transform.position;
+        float distance = direction.magnitude;
+
+        Gizmos.DrawLine(transform.position, target);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction.normalized, distance, groundLayer);
+        Gizmos.DrawSphere(hit.collider != null ? (Vector3)hit.point : target, 0.2f);
     }
 }
