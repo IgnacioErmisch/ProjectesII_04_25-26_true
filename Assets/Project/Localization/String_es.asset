@@ -73,7 +73,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 654944777007104
     m_Localized: El jugador puede usar la cabeza de el Clon Grande para llegar a
-      lugares.
+      lugares
     m_Metadata:
       m_Items: []
   - m_Id: 656940435238912
@@ -109,6 +109,10 @@ MonoBehaviour:
   - m_Id: 669081993211904
     m_Localized: "Los enemigos NEGROS no pueden ser matados, escapa de ellos lo m\xE1s
       r\xE1pido que puedas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1493957648891904
+    m_Localized: NIVELES GUARDIANES CASTILLO
     m_Metadata:
       m_Items: []
   references:

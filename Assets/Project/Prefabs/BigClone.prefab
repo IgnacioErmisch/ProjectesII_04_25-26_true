@@ -5276,7 +5276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978eb0f66d8e0df42b08d6a85a0fda87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 14
+  jumpForce: 15
   maxJumps: 1
   normalGravityScale: 2.5
   fallGravityMultiplier: 2

@@ -77,6 +77,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/LevelEarthCave/Level_22.unity
     guid: 98a8b3cdfef191448ab0d8b0381e24b1
+  - enabled: 1
+    path: Assets/Project/Scenes/LevelEarthCave/Level_23.unity
+    guid: f3404b5d9f67c084796c2b44603da076
+  - enabled: 1
+    path: Assets/Project/Scenes/LevelCastleKeeper/Level_24.unity
+    guid: 05f338d2b3732a244bf9bca374a7e757
+  - enabled: 1
+    path: Assets/Project/Scenes/LevelCastleKeeper/Level_25.unity
+    guid: 75881a70842bf4f43824b003b543b73e
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b08660cd18aaaf243a1b137ac8e23dce, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 21d4bc27bcdf320468b55d3deced6401, type: 3}

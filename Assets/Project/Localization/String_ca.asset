@@ -111,6 +111,12 @@ MonoBehaviour:
       puguis"
     m_Metadata:
       m_Items: []
+  - m_Id: 1493957648891904
+    m_Localized: 'NIVELLS GUARDIANS CASTELL
+
+'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
