@@ -413,7 +413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218099744113761063, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3459924713072776590, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -16256,10 +16256,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1762005090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.655325, y: 0.623}
-  m_AnchorMax: {x: 0.7278086, y: 0.65481955}
-  m_AnchoredPosition: {x: -0.059886932, y: 0.028694153}
-  m_SizeDelta: {x: -0.11986583, y: -0.03869129}
+  m_AnchorMin: {x: 0.655325, y: 0.61735773}
+  m_AnchorMax: {x: 0.7195135, y: 0.65481955}
+  m_AnchoredPosition: {x: -0.08120918, y: 0.025341034}
+  m_SizeDelta: {x: -0.16251704, y: -0.03198292}
   m_Pivot: {x: 0.49999887, y: 0.5}
 --- !u!114 &1965491743
 MonoBehaviour:
@@ -16283,8 +16283,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Big Clone can kill    enemies with his dash!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3e3ab0f75d0eb90488d98c770b4821a4, type: 2}
-  m_sharedMaterial: {fileID: -8271695671536910209, guid: 3e3ab0f75d0eb90488d98c770b4821a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae3956d7d8276c64daa0a4e300d69086, type: 2}
+  m_sharedMaterial: {fileID: -4883389635627730598, guid: ae3956d7d8276c64daa0a4e300d69086, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

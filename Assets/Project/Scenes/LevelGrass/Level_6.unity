@@ -527,7 +527,7 @@ Transform:
   m_GameObject: {fileID: 136549487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.49, y: -2.78, z: 0}
+  m_LocalPosition: {x: 50.98, y: -3.25, z: 0}
   m_LocalScale: {x: 1.1983, y: 1.1983, z: 1.1983}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -653,10 +653,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1234988897}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.84423035, y: 0.3952619}
-  m_AnchorMax: {x: 0.90055317, y: 0.4261817}
-  m_AnchoredPosition: {x: -0.011184692, y: 0.008538246}
-  m_SizeDelta: {x: -0.08412193, y: -0.0906}
+  m_AnchorMin: {x: 0.83964825, y: 0.3952619}
+  m_AnchorMax: {x: 0.9131804, y: 0.425}
+  m_AnchoredPosition: {x: -0.095249176, y: -0.0024647713}
+  m_SizeDelta: {x: 0.051805593, y: -0.0049348194}
   m_Pivot: {x: 0.49999887, y: 0.5}
 --- !u!114 &173470820
 MonoBehaviour:
@@ -680,8 +680,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player can use Big Clone's head to reach places
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3e3ab0f75d0eb90488d98c770b4821a4, type: 2}
-  m_sharedMaterial: {fileID: -8271695671536910209, guid: 3e3ab0f75d0eb90488d98c770b4821a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae3956d7d8276c64daa0a4e300d69086, type: 2}
+  m_sharedMaterial: {fileID: -4883389635627730598, guid: ae3956d7d8276c64daa0a4e300d69086, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.006034851, w: -0.0019769669}
+  m_margin: {x: 0, y: 0, z: -0.011123657, w: -0.0019769669}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -22517,7 +22517,7 @@ Transform:
   m_GameObject: {fileID: 398684392}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.4, y: -2.82, z: 0}
+  m_LocalPosition: {x: 50.93, y: -3.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22865,7 +22865,7 @@ Transform:
   m_GameObject: {fileID: 548322769}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.68, y: 2.18, z: 0}
+  m_LocalPosition: {x: 51.01, y: 2.1, z: 0}
   m_LocalScale: {x: 7.1968117, y: 6.656791, z: 8.654174}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24603,10 +24603,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1234988897}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5672231, y: 0.6067645}
-  m_AnchorMax: {x: 0.6111821, y: 0.6331873}
-  m_AnchoredPosition: {x: -0.035585403, y: 0.02618742}
-  m_SizeDelta: {x: -0.07114697, y: -0.04939057}
+  m_AnchorMin: {x: 0.5614081, y: 0.614}
+  m_AnchorMax: {x: 0.6294568, y: 0.64455426}
+  m_AnchoredPosition: {x: -0.0044136047, y: 0.013689041}
+  m_SizeDelta: {x: -0.07423857, y: -0.0105817495}
   m_Pivot: {x: 0.49999976, y: 0.5}
 --- !u!114 &627143938
 MonoBehaviour:
@@ -24630,8 +24630,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player can ride Big Clone and walk on the spikes
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3e3ab0f75d0eb90488d98c770b4821a4, type: 2}
-  m_sharedMaterial: {fileID: -8271695671536910209, guid: 3e3ab0f75d0eb90488d98c770b4821a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae3956d7d8276c64daa0a4e300d69086, type: 2}
+  m_sharedMaterial: {fileID: -4883389635627730598, guid: ae3956d7d8276c64daa0a4e300d69086, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -25028,7 +25028,7 @@ Transform:
   m_GameObject: {fileID: 767490251}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.73, y: 0.69400007, z: 0}
+  m_LocalPosition: {x: 51.11, y: 0.71, z: 0}
   m_LocalScale: {x: 10.732061, y: 9.926771, z: 12.905316}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28694,7 +28694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218099744113761063, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4586615158342418971, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -28934,10 +28934,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1234988897}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.8535271, y: 0.3623418}
-  m_AnchorMax: {x: 0.88838917, y: 0.379631}
-  m_AnchoredPosition: {x: -0.071510315, y: 0.009482384}
-  m_SizeDelta: {x: -0.017422944, y: 0.019847248}
+  m_AnchorMin: {x: 0.8378771, y: 0.3495535}
+  m_AnchorMax: {x: 0.9131804, y: 0.37476632}
+  m_AnchoredPosition: {x: 0.003490448, y: 0.039499283}
+  m_SizeDelta: {x: -0.12879635, y: -0.016311403}
   m_Pivot: {x: 0.49999887, y: 0.5}
 --- !u!114 &1822559386
 MonoBehaviour:
@@ -28961,8 +28961,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Change camera perspective
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3e3ab0f75d0eb90488d98c770b4821a4, type: 2}
-  m_sharedMaterial: {fileID: -8271695671536910209, guid: 3e3ab0f75d0eb90488d98c770b4821a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae3956d7d8276c64daa0a4e300d69086, type: 2}
+  m_sharedMaterial: {fileID: -4883389635627730598, guid: ae3956d7d8276c64daa0a4e300d69086, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
