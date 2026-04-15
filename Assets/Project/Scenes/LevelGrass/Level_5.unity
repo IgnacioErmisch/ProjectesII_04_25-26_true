@@ -413,7 +413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218099744113761063, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3459924713072776590, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -438,6 +438,10 @@ PrefabInstance:
     - target: {fileID: 4777075642979453360, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777075642979453360, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4817410540603659738, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -16256,10 +16260,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1762005090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.655325, y: 0.61735773}
-  m_AnchorMax: {x: 0.7195135, y: 0.65481955}
-  m_AnchoredPosition: {x: -0.08120918, y: 0.025341034}
-  m_SizeDelta: {x: -0.16251704, y: -0.03198292}
+  m_AnchorMin: {x: 0.655325, y: 0.6307318}
+  m_AnchorMax: {x: 0.7187019, y: 0.66851985}
+  m_AnchoredPosition: {x: -0.017341614, y: 0.023543358}
+  m_SizeDelta: {x: -0.03478646, y: -0.033158094}
   m_Pivot: {x: 0.49999887, y: 0.5}
 --- !u!114 &1965491743
 MonoBehaviour:
@@ -16315,8 +16319,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -16346,7 +16350,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.02910757, w: -0.022445917}
+  m_margin: {x: 0, y: 0, z: -0.02910757, w: -1.7548667}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -16530,6 +16534,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 617860279}
   - {fileID: 956203128}
+  - {fileID: 163907179}
   - {fileID: 1365031258}
   - {fileID: 1550950909}
   - {fileID: 85632780}
@@ -16542,7 +16547,6 @@ SceneRoots:
   - {fileID: 1439800441}
   - {fileID: 1144993265}
   - {fileID: 1133767543}
-  - {fileID: 163907179}
   - {fileID: 37157275}
   - {fileID: 632411734}
   - {fileID: 405041969}
