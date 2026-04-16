@@ -127267,7 +127267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 803699521442944123, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.69
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 803699521442944123, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -127311,7 +127311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4492489314801187546, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.4
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 4503241564842466741, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: switchInterface
