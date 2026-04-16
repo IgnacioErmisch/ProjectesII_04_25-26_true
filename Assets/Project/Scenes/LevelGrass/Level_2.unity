@@ -6809,6 +6809,10 @@ PrefabInstance:
       propertyPath: fallGravityMultiplier
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6773113138284326154, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
+      propertyPath: orthographic size
+      value: 8.4375
+      objectReference: {fileID: 0}
     - target: {fileID: 7564787060841960555, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: isSmallClone
       value: 0
@@ -8729,7 +8733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2995961432192028365, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_MinValue
-      value: 0.001
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 2995961432192028365, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8773,7 +8777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4817410540603659738, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_MinValue
-      value: 0.001
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4817410540603659738, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
