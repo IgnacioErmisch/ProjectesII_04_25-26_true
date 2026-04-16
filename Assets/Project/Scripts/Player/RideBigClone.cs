@@ -11,7 +11,7 @@ public class RideBigClone : MonoBehaviour
     private Transform playerTransform;
     private float originalGravity;
     private bool isAttached = false;
-    private float originalMass = 100000f;
+    private float originalMass = 1000f;
     private bool playerInsideTrigger = false;
     private Rigidbody2D rb;
 
@@ -77,7 +77,7 @@ public class RideBigClone : MonoBehaviour
         if (player == null) return;
         isAttached = true;
         originalMass = player.mass;
-        player.mass = 1000f;
+        player.mass = 10f;
         originalGravity = player.gravityScale;
         player.gravityScale = 0f;
         player.linearVelocity = Vector2.zero;
