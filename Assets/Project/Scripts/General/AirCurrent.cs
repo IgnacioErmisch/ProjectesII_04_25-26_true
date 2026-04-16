@@ -7,14 +7,16 @@ public class AirCurrent : MonoBehaviour
     [SerializeField] private Vector2 currentDirection = Vector2.right;
     [SerializeField] private float targetSpeed = 12f;
     [SerializeField] private float entryImpulse = 8f;
+    [SerializeField] private float maxPerpSpeed = 3f;
+
     [Header("Bloqueo por clon grande")]
     [SerializeField] private LayerMask bigCloneLayer;
+
     [Header("Objetos afectados")]
     [SerializeField] private LayerMask affectedLayers;
-    [Header("Debug")]
     [SerializeField] private bool showGizmos = true;
 
-    private readonly List<Rigidbody2D> objectsInside = new();
+    private List<Rigidbody2D> objectsInside = new();
     private BoxCollider2D triggerArea;
     private Collider2D bigCloneBlocker;
 
@@ -23,6 +25,7 @@ public class AirCurrent : MonoBehaviour
     private void FixedUpdate()
     {
         bigCloneBlocker = GetBlockingClone();
+
         Vector2 dir = currentDirection.normalized;
         Vector2 perp = new(-dir.y, dir.x);
 
@@ -33,9 +36,12 @@ public class AirCurrent : MonoBehaviour
             Rigidbody2D rb = objectsInside[i];
             if (IsProtectedByClone(rb, dir)) continue;
 
-            Vector2 desiredVelocity = dir * targetSpeed + perp * Vector2.Dot(rb.linearVelocity, perp);
-            PlayerMovement pm = rb.GetComponent<PlayerMovement>();
+            float perpSpeed = Vector2.Dot(rb.linearVelocity, perp);
+            perpSpeed = Mathf.Clamp(perpSpeed, -maxPerpSpeed, maxPerpSpeed);
 
+            Vector2 desiredVelocity = dir * targetSpeed + perp * perpSpeed;
+
+            PlayerMovement pm = rb.GetComponent<PlayerMovement>();
             if (pm != null)
             {
                 if (Mathf.Abs(dir.y) > 0.01f)
@@ -49,6 +55,7 @@ public class AirCurrent : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!IsAffectedLayer(other.gameObject)) return;
@@ -99,7 +106,7 @@ public class AirCurrent : MonoBehaviour
 
         Vector2 dirAbs = new(Mathf.Abs(dir.x), Mathf.Abs(dir.y));
         float leadingEdge = Vector2.Dot((Vector2)bigCloneBlocker.bounds.center, dir)
-                          + Vector2.Dot((Vector2)bigCloneBlocker.bounds.extents, dirAbs);
+                            + Vector2.Dot((Vector2)bigCloneBlocker.bounds.extents, dirAbs);
 
         return Vector2.Dot(rb.position, dir) > leadingEdge;
     }
@@ -133,7 +140,7 @@ public class AirCurrent : MonoBehaviour
         Vector2 dir2 = currentDirection.normalized;
         Vector2 dirAbs = new(Mathf.Abs(dir2.x), Mathf.Abs(dir2.y));
         float leadingEdge = Vector2.Dot((Vector2)bigCloneBlocker.bounds.center, dir2)
-                          + Vector2.Dot((Vector2)bigCloneBlocker.bounds.extents, dirAbs);
+                            + Vector2.Dot((Vector2)bigCloneBlocker.bounds.extents, dirAbs);
 
         Vector3 shieldPos = center + dir * (leadingEdge - Vector2.Dot((Vector2)center, dir2));
         Vector3 perp = Vector3.Cross(dir, Vector3.forward).normalized;
