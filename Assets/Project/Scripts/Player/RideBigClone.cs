@@ -4,7 +4,6 @@ public class RideBigClone : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer bigCloneSpriteRenderer;
     [SerializeField] private Transform playerAnchorPoint;
-
     private Rigidbody2D player;
     private SpriteRenderer playerSpriteRenderer;
     private Transform cloneCanvas;
@@ -12,20 +11,26 @@ public class RideBigClone : MonoBehaviour
     private Transform playerTransform;
     private float originalGravity;
     private bool isAttached = false;
+    private float originalMass = 100000f;
+    private bool playerInsideTrigger = false;
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void FixedUpdate()
     {
         if (!isAttached || player == null || playerAnchorPoint == null) return;
-
         player.MovePosition(playerAnchorPoint.position);
-        player.MoveRotation(rb.rotation); 
+        player.MoveRotation(rb.rotation);
         player.linearVelocity = Vector2.zero;
     }
 
     private void Update()
     {
         if (!isAttached) return;
-
         if (!GameManager.Instance.GetControlllingPlayer())
         {
             if (bigCloneSpriteRenderer != null && player != null)
@@ -36,22 +41,15 @@ public class RideBigClone : MonoBehaviour
                     pm.ForceFlipVisualOnly(cloneFacingRight);
             }
         }
-
         if (playerTransform != null)
             playerTransform.rotation = transform.rotation;
-    }
-
-    private Rigidbody2D rb;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            playerInsideTrigger = true;
             player = collision.attachedRigidbody;
             playerSpriteRenderer = player.GetComponentInChildren<SpriteRenderer>();
             playerTransform = player.transform;
@@ -62,9 +60,15 @@ public class RideBigClone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            player = null;
-            playerSpriteRenderer = null;
-            playerTransform = null;
+            playerInsideTrigger = false;
+            if (isAttached)
+                DetachPlayer();
+            else
+            {
+                player = null;
+                playerSpriteRenderer = null;
+                playerTransform = null;
+            }
         }
     }
 
@@ -72,7 +76,8 @@ public class RideBigClone : MonoBehaviour
     {
         if (player == null) return;
         isAttached = true;
-
+        originalMass = player.mass;
+        player.mass = 1000f;
         originalGravity = player.gravityScale;
         player.gravityScale = 0f;
         player.linearVelocity = Vector2.zero;
@@ -83,6 +88,7 @@ public class RideBigClone : MonoBehaviour
             if (cloneCanvas != null)
                 canvasOriginalPosition = cloneCanvas.localPosition;
         }
+
         if (playerSpriteRenderer != null)
             playerSpriteRenderer.sortingOrder = 1;
         if (cloneCanvas != null)
@@ -98,6 +104,7 @@ public class RideBigClone : MonoBehaviour
 
         if (player != null)
         {
+            player.mass = originalMass;
             player.gravityScale = originalGravity;
             player.MoveRotation(0f);
         }
@@ -106,7 +113,19 @@ public class RideBigClone : MonoBehaviour
             playerSpriteRenderer.sortingOrder = 3;
         if (cloneCanvas != null)
             cloneCanvas.localPosition = canvasOriginalPosition;
+
+        if (!playerInsideTrigger)
+        {
+            player = null;
+            playerSpriteRenderer = null;
+            playerTransform = null;
+        }
     }
 
     public bool IsAtached() => player != null && isAttached;
+
+    private void OnDestroy()
+    {
+        DetachPlayer();
+    }
 }
