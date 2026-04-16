@@ -24656,6 +24656,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5242976432169600771, guid: 336acd88a49507a46a883101ae481446, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.20875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242976432169600771, guid: 336acd88a49507a46a883101ae481446, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2757754
+      objectReference: {fileID: 0}
     - target: {fileID: 6438624117865939816, guid: 336acd88a49507a46a883101ae481446, type: 3}
       propertyPath: m_Name
       value: BackGroundNight
