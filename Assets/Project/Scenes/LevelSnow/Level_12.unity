@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: parallaxSpeed
       value: 0.0373
       objectReference: {fileID: 0}
+    - target: {fileID: 5242976432169600771, guid: 336acd88a49507a46a883101ae481446, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5675
+      objectReference: {fileID: 0}
     - target: {fileID: 6438624117865939816, guid: 336acd88a49507a46a883101ae481446, type: 3}
       propertyPath: m_Name
       value: BackGroundNight

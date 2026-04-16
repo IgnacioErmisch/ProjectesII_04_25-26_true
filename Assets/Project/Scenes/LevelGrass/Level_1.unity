@@ -23619,6 +23619,10 @@ PrefabInstance:
       propertyPath: perspectiveSwitch
       value: 
       objectReference: {fileID: 1244680532}
+    - target: {fileID: 6773113138284326154, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
+      propertyPath: orthographic size
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7564787060841960555, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: switchInterface
       value: 
@@ -23888,6 +23892,18 @@ PrefabInstance:
     - target: {fileID: 5553644262322251790, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
       propertyPath: m_Name
       value: BackGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668388235443825765, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.14279
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668388235443825765, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6541
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668388235443825765, guid: 77f3b1eb88bbbe04793a71452499aade, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.7299955
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

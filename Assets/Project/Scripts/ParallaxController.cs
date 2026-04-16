@@ -8,19 +8,21 @@ public class ParallaxController : MonoBehaviour
     Material[] mat;
     float[] backSpeed;
     float farthestBack;
+    float startY;
+    float smoothedX;
+
     [Range(0.01f, 0.05f)]
     public float parallaxSpeed = 0.02f;
-    [Range(0f, 1f)]
-    public float verticalSmoothFactor = 0f;
-    float smoothedY;
-    float smoothedX;
+
+    [Range(1f, 30f)]
+    public float smoothSpeed = 10f;
 
     void Start()
     {
         cam = Camera.main.transform;
         camStartPos = cam.position;
-        smoothedY = cam.position.y;
         smoothedX = cam.position.x;
+        startY = transform.position.y;
 
         int backCount = transform.childCount;
         mat = new Material[backCount];
@@ -54,18 +56,15 @@ public class ParallaxController : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    void LateUpdate()
     {
+        float lerpFactor = 1f - Mathf.Exp(-smoothSpeed * Time.deltaTime);
+        smoothedX = Mathf.Lerp(smoothedX, cam.position.x, lerpFactor);
 
-        smoothedX = Mathf.Lerp(smoothedX, cam.position.x, 0.15f);
-        smoothedY = (verticalSmoothFactor > 0f)
-            ? Mathf.Lerp(smoothedY, cam.position.y, verticalSmoothFactor)
-            : camStartPos.y;
-
-
-        transform.position = new Vector3(smoothedX - 35f, smoothedY, 0f);
+        transform.position = new Vector3(smoothedX - 35f, startY, 0f);
 
         float distanceX = smoothedX - camStartPos.x;
+
         for (int i = 0; i < backgrounds.Length; i++)
         {
             float speed = backSpeed[i] * parallaxSpeed;

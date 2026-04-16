@@ -15398,6 +15398,14 @@ PrefabInstance:
       propertyPath: parallaxSpeed
       value: 0.0189
       objectReference: {fileID: 0}
+    - target: {fileID: 5242976432169600771, guid: 336acd88a49507a46a883101ae481446, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.3225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242976432169600771, guid: 336acd88a49507a46a883101ae481446, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.28
+      objectReference: {fileID: 0}
     - target: {fileID: 6438624117865939816, guid: 336acd88a49507a46a883101ae481446, type: 3}
       propertyPath: m_Name
       value: BackGroundNight
@@ -18158,7 +18166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218099744113761063, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4644095587594484622, guid: 0c471059678c5b049bf3e4fb9d92a9ec, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
