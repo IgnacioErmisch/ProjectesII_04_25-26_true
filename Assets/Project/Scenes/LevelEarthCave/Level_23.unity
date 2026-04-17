@@ -253,7 +253,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2557576667955433216, guid: cc0f799ee1409544b85bbf8b032f672c, type: 3}
       propertyPath: maxDistance
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2524887693938830488, guid: cc0f799ee1409544b85bbf8b032f672c, type: 3}
       propertyPath: m_Name
@@ -71817,7 +71817,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2070252230, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 2054123824, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -21, y: -1, z: 0}
@@ -71871,7 +71871,7 @@ Tilemap:
       - {fileID: -1056527103, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 285203565, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: -1186250278, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -2, y: 6, z: 0}
@@ -72024,7 +72024,7 @@ Tilemap:
       - {fileID: -1056527103, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 285203565, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: -1186250278, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -41, y: 34, z: 0}
@@ -72873,11 +72873,11 @@ PrefabInstance:
       objectReference: {fileID: 1069462931}
     - target: {fileID: 5000043507840901327, guid: b0c217bd6bf71e841ad6a2d51ac13a86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.52
+      value: -34.505
       objectReference: {fileID: 0}
     - target: {fileID: 5000043507840901327, guid: b0c217bd6bf71e841ad6a2d51ac13a86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.482
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 5000043507840901327, guid: b0c217bd6bf71e841ad6a2d51ac13a86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -108427,11 +108427,11 @@ PrefabInstance:
       objectReference: {fileID: 170422454}
     - target: {fileID: 5000043507840901327, guid: b0c217bd6bf71e841ad6a2d51ac13a86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.524
+      value: -32.499
       objectReference: {fileID: 0}
     - target: {fileID: 5000043507840901327, guid: b0c217bd6bf71e841ad6a2d51ac13a86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.477
+      value: 8.498
       objectReference: {fileID: 0}
     - target: {fileID: 5000043507840901327, guid: b0c217bd6bf71e841ad6a2d51ac13a86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -124859,7 +124859,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2557576667955433216, guid: cc0f799ee1409544b85bbf8b032f672c, type: 3}
       propertyPath: maxDistance
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2524887693938830488, guid: cc0f799ee1409544b85bbf8b032f672c, type: 3}
       propertyPath: m_Name
