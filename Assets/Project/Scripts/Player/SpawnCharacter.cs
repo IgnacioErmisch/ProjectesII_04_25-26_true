@@ -18,14 +18,6 @@ public class SpawnCharacter : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Spikes"))
-        {
-            combatController.TakeDamage(combatController.GetMaxHealth(), Vector2.zero);
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("BlastZone"))
@@ -33,6 +25,10 @@ public class SpawnCharacter : MonoBehaviour
             energyController.ResetEnergy();
             combatController.ResetHealth();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            combatController.TakeDamage(combatController.GetMaxHealth(), Vector2.zero);
         }
     }
     private IEnumerator WaitForSpawn()

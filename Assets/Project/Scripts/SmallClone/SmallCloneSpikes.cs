@@ -4,7 +4,7 @@ using UnityEngine;
 public class SmallCloneSpikes : MonoBehaviour
 {
     private HashSet<GameObject> clonesInZone = new HashSet<GameObject>();
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("SmallClone"))
 
@@ -16,7 +16,7 @@ public class SmallCloneSpikes : MonoBehaviour
             clonesInZone.Remove(collision.gameObject);
         }
     }
-    
+
     private void DespawnClone(GameObject clone)
     {
 
