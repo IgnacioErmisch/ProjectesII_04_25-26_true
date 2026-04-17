@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class PlatformClone : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
@@ -10,12 +9,13 @@ public class PlatformClone : MonoBehaviour
     private Color originalColor;
     [SerializeField] private GameObject[] arrows;
     [SerializeField] private SoundManager soundManager;
-
     private AudioSource platformAudioSource;
+    private Rigidbody2D rb;
 
     private void Awake()
     {
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Start()
@@ -32,11 +32,12 @@ public class PlatformClone : MonoBehaviour
         platformAudioSource.outputAudioMixerGroup = soundManager.sfxMixerGroup;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (direction != 0)
         {
-            float distanceFromStart = transform.position.y - startPosition.y;
+            float distanceFromStart = rb.position.y - startPosition.y;
+
             if (direction == 1 && distanceFromStart >= maxDistance)
             {
                 Stop();
@@ -47,7 +48,13 @@ public class PlatformClone : MonoBehaviour
                 Stop();
                 return;
             }
-            transform.Translate(Vector3.up * direction * moveSpeed * Time.deltaTime, Space.World);
+
+            Vector2 newPosition = rb.position + Vector2.up * direction * moveSpeed * Time.fixedDeltaTime;
+            rb.MovePosition(newPosition);
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -83,6 +90,7 @@ public class PlatformClone : MonoBehaviour
     public void Stop()
     {
         direction = 0;
+        rb.linearVelocity = Vector2.zero;
         if (spriteRenderer != null)
             spriteRenderer.color = originalColor;
         StopPlatformLoop();
