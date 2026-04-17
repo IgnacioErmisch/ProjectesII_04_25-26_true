@@ -4217,8 +4217,8 @@ Tilemap:
   - first: {x: -15, y: 5, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 66
-      m_TileSpriteIndex: 64
+      m_TileIndex: 57
+      m_TileSpriteIndex: 55
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4860,7 +4860,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 327a406060a992f4bbf27881d08a88cc, type: 2}
   - m_RefCount: 37
     m_Data: {fileID: 11400000, guid: 0bc31a261cb8f414e9277a61ca5a908b, type: 2}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 690792a8058363f43995ebe6960f392d, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: e5991bf8e346eb54a93f2c1f1c9f8704, type: 2}
@@ -4878,7 +4878,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 91e1858150d09154b87d21ed7e84de60, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: 86429a54b4082b84e897659d16c06961, type: 2}
-  - m_RefCount: 14
+  - m_RefCount: 13
     m_Data: {fileID: 11400000, guid: 88b454e4c5c79be4f81d117159ace303, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: 3747faecdc04cb9439948d285ebec3fb, type: 2}
@@ -5017,7 +5017,7 @@ Tilemap:
     m_Data: {fileID: -1219066866, guid: 13aec38b3c8cdf54aabd49bec570fb29, type: 3}
   - m_RefCount: 37
     m_Data: {fileID: -212287269, guid: 13aec38b3c8cdf54aabd49bec570fb29, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 3
     m_Data: {fileID: 1982423662, guid: 13aec38b3c8cdf54aabd49bec570fb29, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -1828322655, guid: 13aec38b3c8cdf54aabd49bec570fb29, type: 3}
@@ -5035,7 +5035,7 @@ Tilemap:
     m_Data: {fileID: -1501869667, guid: 13aec38b3c8cdf54aabd49bec570fb29, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: -1611254227, guid: 13aec38b3c8cdf54aabd49bec570fb29, type: 3}
-  - m_RefCount: 14
+  - m_RefCount: 13
     m_Data: {fileID: -2113114458, guid: 13aec38b3c8cdf54aabd49bec570fb29, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: -1637646569, guid: 13aec38b3c8cdf54aabd49bec570fb29, type: 3}
@@ -6811,7 +6811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6773113138284326154, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7564787060841960555, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: isSmallClone
