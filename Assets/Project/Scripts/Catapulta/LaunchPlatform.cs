@@ -22,21 +22,21 @@ public class LaunchPlatform : MonoBehaviour
     [SerializeField] private float launchAnimationSpeed = 15f;
     [SerializeField] private ParticleSystem launchEffect;
     [SerializeField] private SoundManager soundManager;
+
     private Vector3 originalPosition;
     private Vector3 targetPosition;
     private List<GameObject> playersNearby = new List<GameObject>();
 
     private void Awake()
     {
-        originalPosition = transform.position;
+        originalPosition = transform.localPosition;
         targetPosition = originalPosition;
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
-
     }
 
     private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * launchAnimationSpeed);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * launchAnimationSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,9 +44,7 @@ public class LaunchPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             if (!playersNearby.Contains(collision.gameObject))
-            {
                 playersNearby.Add(collision.gameObject);
-            }
         }
     }
 
@@ -55,9 +53,7 @@ public class LaunchPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             if (!playersNearby.Contains(collision.gameObject))
-            {
                 playersNearby.Add(collision.gameObject);
-            }
         }
     }
 
@@ -73,9 +69,7 @@ public class LaunchPlatform : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             if (!playersNearby.Contains(collision.gameObject))
-            {
                 playersNearby.Add(collision.gameObject);
-            }
         }
     }
 
@@ -84,9 +78,7 @@ public class LaunchPlatform : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             if (!playersNearby.Contains(collision.gameObject))
-            {
                 playersNearby.Add(collision.gameObject);
-            }
         }
     }
 
@@ -113,7 +105,6 @@ public class LaunchPlatform : MonoBehaviour
             playerRb.bodyType = RigidbodyType2D.Dynamic;
         }
 
-        RigidbodyConstraints2D originalConstraints = playerRb.constraints;
         playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         Vector2 normalizedDirection = launchDirection.normalized;
@@ -134,9 +125,7 @@ public class LaunchPlatform : MonoBehaviour
     private float CalculateForceMultiplier(float impactForce)
     {
         if (!useScalableForce || impactForce <= 0f)
-        {
             return minForceMultiplier;
-        }
 
         float normalizedImpact = Mathf.InverseLerp(baseImpactForce, maxImpactForce, impactForce);
         float multiplier = Mathf.Lerp(minForceMultiplier, maxForceMultiplier, normalizedImpact);
@@ -178,9 +167,7 @@ public class LaunchPlatform : MonoBehaviour
     private void PlayEffects()
     {
         if (launchEffect != null)
-        {
             Instantiate(launchEffect, transform.position, Quaternion.identity);
-        }
 
         soundManager.PlaySFX(soundManager.catapult);
     }
@@ -189,13 +176,13 @@ public class LaunchPlatform : MonoBehaviour
     {
         CancelInvoke();
         targetPosition = originalPosition;
-        transform.position = originalPosition;
+        transform.localPosition = originalPosition; 
         playersNearby.Clear();
     }
 
     private void OnDrawGizmosSelected()
     {
-        Vector3 pos = Application.isPlaying ? originalPosition : transform.position;
+        Vector3 pos = Application.isPlaying ? transform.parent.position + originalPosition : transform.position;
 
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos, transform.localScale);
