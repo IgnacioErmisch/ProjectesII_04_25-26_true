@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class LaunchPlatform : MonoBehaviour
 {
@@ -8,14 +7,7 @@ public class LaunchPlatform : MonoBehaviour
     [SerializeField] private Vector2 launchDirection = new Vector2(1, 1);
     [SerializeField] private float launchForce = 20f;
     [SerializeField] private float resetDelay = 1f;
-    [SerializeField] private float movementDisableDuration = 0.5f;
-
-    [Header("Dynamic Force Scaling")]
-    [SerializeField] private bool useScalableForce = true;
-    [SerializeField] private float minForceMultiplier = 1f;
-    [SerializeField] private float maxForceMultiplier = 3f;
-    [SerializeField] private float baseImpactForce = 5f;
-    [SerializeField] private float maxImpactForce = 20f;
+    [SerializeField] private float movementDisableDuration = 1.2f;
 
     [Header("Visual Feedback")]
     [SerializeField] private float launchOffset = 0.5f;
@@ -25,13 +17,15 @@ public class LaunchPlatform : MonoBehaviour
 
     private Vector3 originalPosition;
     private Vector3 targetPosition;
-    private List<GameObject> playersNearby = new List<GameObject>();
+    private GameObject pendingPlayer;
 
     private void Awake()
     {
         originalPosition = transform.localPosition;
         targetPosition = originalPosition;
-        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
+        if (soundManager == null)
+            soundManager = GameObject.FindGameObjectWithTag("Audio")?.GetComponent<SoundManager>();
     }
 
     private void Update()
@@ -42,121 +36,87 @@ public class LaunchPlatform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
-            if (!playersNearby.Contains(collision.gameObject))
-                playersNearby.Add(collision.gameObject);
-        }
+            pendingPlayer = collision.gameObject;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
-            if (!playersNearby.Contains(collision.gameObject))
-                playersNearby.Add(collision.gameObject);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-        }
+            pendingPlayer = collision.gameObject;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            if (!playersNearby.Contains(collision.gameObject))
-                playersNearby.Add(collision.gameObject);
-        }
+            pendingPlayer = collision.gameObject;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
-            if (!playersNearby.Contains(collision.gameObject))
-                playersNearby.Add(collision.gameObject);
-        }
+            pendingPlayer = collision.gameObject;
     }
 
-    public void LaunchPlayer(float impactForce = 0f)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        float forceMultiplier = CalculateForceMultiplier(impactForce);
+        if (collision.gameObject.CompareTag("Player"))
+            pendingPlayer = null;
+    }
 
-        GameObject playerToLaunch = FindClosestPlayer();
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            pendingPlayer = null;
+    }
 
-        if (playerToLaunch == null) return;
+    public bool IsPlayerReady()
+    {
+        return pendingPlayer != null;
+    }
 
-        Rigidbody2D playerRb = playerToLaunch.GetComponent<Rigidbody2D>();
+    public void LaunchPlayer()
+    {
+        if (pendingPlayer == null) return;
 
+        Rigidbody2D playerRb = pendingPlayer.GetComponent<Rigidbody2D>();
         if (playerRb == null) return;
 
-        PlayerMovement playerMovement = playerToLaunch.GetComponent<PlayerMovement>();
+        PlayerMovement playerMovement = pendingPlayer.GetComponent<PlayerMovement>();
         if (playerMovement != null)
-        {
             playerMovement.DisableControlForLaunch(movementDisableDuration);
-        }
 
-        if (playerRb.bodyType == RigidbodyType2D.Kinematic)
-        {
-            playerRb.bodyType = RigidbodyType2D.Dynamic;
-        }
-
-        playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        StartCoroutine(ForceLaunch(playerRb));
 
         Vector2 normalizedDirection = launchDirection.normalized;
-        float finalForce = launchForce * forceMultiplier;
-
-        playerRb.linearVelocity = normalizedDirection * finalForce;
-
         Vector3 launchDir3D = new Vector3(normalizedDirection.x, normalizedDirection.y, 0);
-        float scaledOffset = launchOffset * Mathf.Clamp(forceMultiplier, 0.5f, 2f);
-        targetPosition = originalPosition + launchDir3D * scaledOffset;
+        targetPosition = originalPosition + launchDir3D * launchOffset;
 
         PlayEffects();
-
-        Invoke(nameof(ClearPlayersList), 0.5f);
         Invoke(nameof(ResetPlatform), resetDelay);
+        pendingPlayer = null;
     }
 
-    private float CalculateForceMultiplier(float impactForce)
+    private IEnumerator ForceLaunch(Rigidbody2D rb)
     {
-        if (!useScalableForce || impactForce <= 0f)
-            return minForceMultiplier;
+        if (rb == null) yield break;
 
-        float normalizedImpact = Mathf.InverseLerp(baseImpactForce, maxImpactForce, impactForce);
-        float multiplier = Mathf.Lerp(minForceMultiplier, maxForceMultiplier, normalizedImpact);
+        Vector2 normalizedDirection = launchDirection.normalized;
+        Vector2 targetVelocity = normalizedDirection * launchForce;
 
-        return Mathf.Clamp(multiplier, minForceMultiplier, maxForceMultiplier);
-    }
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        float savedGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
 
-    private GameObject FindClosestPlayer()
-    {
-        GameObject closest = null;
-        float closestDistance = float.MaxValue;
-
-        playersNearby.RemoveAll(player => player == null);
-
-        foreach (GameObject player in playersNearby)
+        for (int i = 0; i < 5; i++)
         {
-            float distance = Vector2.Distance(transform.position, player.transform.position);
-
-            if (distance < 3f && distance < closestDistance)
-            {
-                closest = player;
-                closestDistance = distance;
-            }
+            rb.linearVelocity = targetVelocity;
+            yield return new WaitForFixedUpdate();
         }
 
-        return closest;
-    }
-
-    private void ClearPlayersList()
-    {
-        playersNearby.Clear();
+        rb.gravityScale = savedGravity;
     }
 
     private void ResetPlatform()
@@ -169,15 +129,17 @@ public class LaunchPlatform : MonoBehaviour
         if (launchEffect != null)
             Instantiate(launchEffect, transform.position, Quaternion.identity);
 
-        soundManager.PlaySFX(soundManager.catapult);
+        if (soundManager != null)
+            soundManager.PlaySFX(soundManager.catapult);
     }
 
     public void ForceReset()
     {
         CancelInvoke();
+        StopAllCoroutines();
         targetPosition = originalPosition;
-        transform.localPosition = originalPosition; 
-        playersNearby.Clear();
+        transform.localPosition = originalPosition;
+        pendingPlayer = null;
     }
 
     private void OnDrawGizmosSelected()
@@ -193,13 +155,6 @@ public class LaunchPlatform : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(pos, launchDir3D * 3f);
         Gizmos.DrawWireSphere(pos + launchDir3D * 3f, 0.3f);
-
-        if (useScalableForce)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(pos, launchDir3D * 3f * maxForceMultiplier);
-            Gizmos.DrawWireSphere(pos + launchDir3D * 3f * maxForceMultiplier, 0.3f);
-        }
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(pos, 3f);
