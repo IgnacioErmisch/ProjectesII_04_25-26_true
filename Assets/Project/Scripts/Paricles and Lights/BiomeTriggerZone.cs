@@ -6,9 +6,6 @@ public class BiomeTriggerZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player") && !other.CompareTag("SmallClone") && !other.CompareTag("BigClone"))
-            return;
-
         var particles = other.GetComponentsInChildren<ParticleSystem>();
         foreach (var ps in particles)
         {
