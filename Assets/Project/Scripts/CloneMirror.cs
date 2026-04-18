@@ -15,7 +15,14 @@ public class CloneMirror : MonoBehaviour
     [SerializeField] private Transform mirrorExitPoint;
 
     private bool isOnCooldown = false;
+    [SerializeField] private SoundManager soundManager;
 
+
+    private void Awake()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
+
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isOnCooldown) return;
@@ -24,6 +31,9 @@ public class CloneMirror : MonoBehaviour
             HandleMirror(isSmallEntering: true);
         else if (other.GetComponent<BigCloneController>() != null)
             HandleMirror(isSmallEntering: false);
+
+        soundManager.PlaySFX(soundManager.mirror);
+
     }
 
     private void HandleMirror(bool isSmallEntering)

@@ -32,6 +32,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip catapult;
     public AudioClip movingPlatform;
     public AudioClip showPlatforms;
+    public AudioClip mirror;
     public Slider musicSlider;
     public Slider sfxSlider;
     public AudioClip selectButton;
