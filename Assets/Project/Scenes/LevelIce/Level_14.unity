@@ -30584,6 +30584,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.78
       objectReference: {fileID: 0}
+    - target: {fileID: 2527868918195803619, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527868918195803619, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527868918195803619, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527868918195803619, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527868918195803619, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527868918195803619, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: 'TriggerModule.primitives.Array.data[0]'
+      value: 
+      objectReference: {fileID: 299810217}
+    - target: {fileID: 2527868918195803619, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3034947894437548353, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.031
@@ -30591,6 +30619,42 @@ PrefabInstance:
     - target: {fileID: 3034947894437548353, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.061
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.collisionMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: TriggerModule.primitives.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: 'TriggerModule.primitives.Array.data[1]'
+      value: 
+      objectReference: {fileID: 299810217}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686564420670024887, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
+      propertyPath: CollisionModule.multiplyColliderForceByParticleSize
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6015624008135532426, guid: 5799484497c0eda4d92429c97fa491ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31893,7 +31957,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2070252230, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 2054123824, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 2, y: 0, z: 0}
@@ -31908,7 +31972,7 @@ Tilemap:
       - {fileID: -335280785, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 964844924, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 877375751, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -15, y: 4, z: 0}
@@ -102286,11 +102350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2720583653878949928, guid: 496ff01f634b53c4280c5399c6dc9ce0, type: 3}
       propertyPath: TriggerModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2720583653878949928, guid: 496ff01f634b53c4280c5399c6dc9ce0, type: 3}
       propertyPath: CollisionModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2720583653878949928, guid: 496ff01f634b53c4280c5399c6dc9ce0, type: 3}
       propertyPath: TriggerModule.colliderQueryMode
@@ -102303,7 +102367,7 @@ PrefabInstance:
     - target: {fileID: 2720583653878949928, guid: 496ff01f634b53c4280c5399c6dc9ce0, type: 3}
       propertyPath: 'TriggerModule.primitives.Array.data[0]'
       value: 
-      objectReference: {fileID: 1362298682}
+      objectReference: {fileID: 0}
     - target: {fileID: 2720583653878949928, guid: 496ff01f634b53c4280c5399c6dc9ce0, type: 3}
       propertyPath: SubModule.subEmitters.Array.data[0].type
       value: 2
@@ -102599,11 +102663,6 @@ PrefabInstance:
 --- !u!4 &1362298681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4460143399323411906, guid: 496ff01f634b53c4280c5399c6dc9ce0, type: 3}
-  m_PrefabInstance: {fileID: 1362298680}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1362298682 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2590152873277201661, guid: 496ff01f634b53c4280c5399c6dc9ce0, type: 3}
   m_PrefabInstance: {fileID: 1362298680}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1374890413
@@ -103144,7 +103203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6773113138284326154, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7564787060841960555, guid: 28bd4cf6f22d27f45bd60ae1069ed5ba, type: 3}
       propertyPath: switchInterface
