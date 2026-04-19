@@ -112,6 +112,7 @@ public class menuScene : MonoBehaviour
         panelCredits.SetActive(true);
         if (Gamepad.all.Count > 0)
         {
+            EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(exitCredit);
         }
     }
