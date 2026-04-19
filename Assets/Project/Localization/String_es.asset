@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: String_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 599a3f796e20b2b4e8a8c7ca0cffc36d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1723083517952
+    m_Localized: Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1675415252992
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1618200752128
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16481056714752
+    m_Localized: MUSICA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16826445066240
+    m_Localized: IDIOMA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19267962007552
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26903591776256
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30940642930688
+    m_Localized: NIVELES CUEVA DE TIERRA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30983231893504
+    m_Localized: NIVELES CUEVA DE HIELO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30986142740480
+    m_Localized: NIVELES HIERBA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30987887570944
+    m_Localized: NIVELES NIEVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37099873497088
+    m_Localized: "\xA1El Clon Grande puede matar enemigos ROJOS con su embestida!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42887337734144
+    m_Localized: "\xA1El Clon Peque\xF1o puede matar a los enemigos AZULES saltando
+      sobre sus cabezas!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 654944777007104
+    m_Localized: El jugador puede usar la cabeza de el Clon Grande para llegar a
+      lugares
+    m_Metadata:
+      m_Items: []
+  - m_Id: 656940435238912
+    m_Localized: Cambiar la perspectiva de la camara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659452475207680
+    m_Localized: El jugador puede montar el Clon Grande y caminar sobre los pinchos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663089716916224
+    m_Localized: Coloca un clon para mover la plataforma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663734624710656
+    m_Localized: Coloca al jugador o a un clon para mostrar las plataformas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 664297315758080
+    m_Localized: Puedes intercambiar posiciones entre el clon y el jugador con este
+      objeto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665929319444480
+    m_Localized: "El Clon Peque\xF1o puede entrar en la zona antigravedad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668170759696384
+    m_Localized: Los clones no pueden atravesar el campo anticlon, debes desactivarlo
+      con el jugador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 669081993211904
+    m_Localized: "Los enemigos NEGROS no pueden ser matados, escapa de ellos lo m\xE1s
+      r\xE1pido que puedas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1493957648891904
+    m_Localized: NIVELES GUARDIAN CASTILLO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2941524909826048
+    m_Localized: Creditos
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

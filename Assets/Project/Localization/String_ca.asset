@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: String_ca
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: ca
+  m_SharedData: {fileID: 11400000, guid: 599a3f796e20b2b4e8a8c7ca0cffc36d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1723083517952
+    m_Localized: Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1675415252992
+    m_Localized: Opcions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1618200752128
+    m_Localized: Sortir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16481056714752
+    m_Localized: MUSICA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16826445066240
+    m_Localized: IDIOMA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19267962007552
+    m_Localized: Sortir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26903591776256
+    m_Localized: Tornar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30940642930688
+    m_Localized: 'NIVELLS COVA DE TERRA
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30983231893504
+    m_Localized: NIVELLS COVA DE GEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30986142740480
+    m_Localized: NIVELLS HERBA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30987887570944
+    m_Localized: NIVELLS NEU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37099873497088
+    m_Localized: El Clon Gran pot matar enemics VERMELLS amb el seu sprint!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42887337734144
+    m_Localized: El Clon Petit pot matar els enemics BLAU saltant sobre els seus
+      caps!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 654944777007104
+    m_Localized: El jugador pot utilitzar el cap del Clon Gran per arribar a llocs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 656940435238912
+    m_Localized: Canvia la perspectiva de la camera
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659452475207680
+    m_Localized: El jugador pot muntar el Gran Clon i caminar sobre les punxes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663089716916224
+    m_Localized: "Col\xB7loca un clon per moure la plataforma"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663734624710656
+    m_Localized: "Col\xB7loca el jugador o un clon per mostrar les plataformes"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 664297315758080
+    m_Localized: Pots intercanviar posicions entre clon i jugador amb aquest objecte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665929319444480
+    m_Localized: El Clon Petit pot entrar a la zona d'antigravetat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668170759696384
+    m_Localized: Els clons no poden travessar el camp anticlon, s'ha de desactivar
+      amb el jugador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 669081993211904
+    m_Localized: "Els enemics NEGRES no es poden matar, escapa'n tan r\xE0pid com
+      puguis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1493957648891904
+    m_Localized: 'NIVELLS GUARDIA CASTELL
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2941524909826048
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
