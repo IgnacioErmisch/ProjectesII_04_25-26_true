@@ -115,6 +115,10 @@ MonoBehaviour:
     m_Localized: NIVELES GUARDIAN CASTILLO
     m_Metadata:
       m_Items: []
+  - m_Id: 2941524909826048
+    m_Localized: Creditos
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

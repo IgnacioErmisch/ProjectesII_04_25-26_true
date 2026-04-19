@@ -10,8 +10,11 @@ public class menuScene : MonoBehaviour
     public GameObject botonSettings;
     public GameObject botonPlay;
     public GameObject sfx;
+    public GameObject exitCredit;
+    public GameObject buttonCredits;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public GameObject panelCredits;
 
     void Start()
     {
@@ -104,6 +107,14 @@ public class menuScene : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(sfx);
         }
     }
+    public void Credits()
+    {
+        panelCredits.SetActive(true);
+        if (Gamepad.all.Count > 0)
+        {
+            EventSystem.current.SetSelectedGameObject(exitCredit);
+        }
+    }
 
     public void closeSettings()
     {
@@ -112,6 +123,15 @@ public class menuScene : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(botonSettings);
+        }
+    }
+    public void closeCredits()
+    {
+        panelCredits.SetActive(false);
+        if (Gamepad.all.Count > 0)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(buttonCredits);
         }
     }
 }

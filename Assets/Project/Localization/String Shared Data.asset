@@ -125,6 +125,10 @@ MonoBehaviour:
     m_Key: levelSelector.castleKeeper
     m_Metadata:
       m_Items: []
+  - m_Id: 2941524909826048
+    m_Key: menu.Credits
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
