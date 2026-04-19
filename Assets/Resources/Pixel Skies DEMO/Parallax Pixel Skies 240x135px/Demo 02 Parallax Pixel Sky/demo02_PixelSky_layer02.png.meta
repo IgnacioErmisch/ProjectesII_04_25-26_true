@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 005d61280f8b42a409f0a6a3546a9a9a
+guid: 133ff4e02187f97458c0d10ac3ab15bc
 AssetOrigin:
   serializedVersion: 1
   productId: 226622
   packageName: Pixel Skies DEMO Background pack
   packageVersion: 1.0
-  assetPath: Assets/Pixel Skies DEMO/Parallax Pixel Skies 240x135px/Demo 01 Parallax
-    Pixel Sky/demo01_PixelSky_layer03.png
+  assetPath: Assets/Pixel Skies DEMO/Parallax Pixel Skies 240x135px/Demo 02 Parallax
+    Pixel Sky/demo02_PixelSky_layer02.png
   uploadId: 517367
 TextureImporter:
   internalIDToNameTable: []
@@ -120,6 +120,19 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
