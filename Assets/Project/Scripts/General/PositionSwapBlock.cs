@@ -81,9 +81,10 @@ public class PositionSwapBlock : MonoBehaviour
         if (playerRb != null) playerVelocity = playerRb.linearVelocity;
         if (cloneRb != null) cloneVelocity = cloneRb.linearVelocity;
 
-        Vector3 offset = new Vector3(0.5f, 0.75f, 0);
-        player.transform.position = clonePosition + offset;
-        currentClone.transform.position = playerPosition + offset;
+        Vector3 offsetPlayer = new Vector3(0.5f, 0.75f, 0);
+        Vector3 offsetClone = new Vector3(0, 0.75f, 0);
+        player.transform.position = clonePosition + offsetPlayer;
+        currentClone.transform.position = playerPosition + offsetClone;
 
         if (playerRb != null) playerRb.linearVelocity = cloneVelocity;
         if (cloneRb != null) cloneRb.linearVelocity = playerVelocity;
