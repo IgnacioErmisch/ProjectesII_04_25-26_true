@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242407336774715265, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: detectionRadius
-      value: 8.75
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2588736465276988488, guid: 3381a47bfab0ffa46927fc418db81fa0, type: 3}
       propertyPath: m_LocalPosition.y
