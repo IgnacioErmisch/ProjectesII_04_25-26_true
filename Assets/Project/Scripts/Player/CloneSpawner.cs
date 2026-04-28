@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CloneSpawner : MonoBehaviour
 {
@@ -33,16 +34,15 @@ public class CloneSpawner : MonoBehaviour
 
     private GameObject currentClone;
     private SoundManager soundManager;
-   
 
     public bool CloneActive { get; private set; } = false;
 
-   
+
     private void Awake()
     {
         soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
     }
-   
+
 
     private void OnDrawGizmos()
     {
@@ -50,7 +50,6 @@ public class CloneSpawner : MonoBehaviour
         DrawSpawnGizmo(cloneSpawnPointPrincipalUp);
     }
 
- 
 
     public bool TrySpawnClone()
     {
@@ -73,12 +72,31 @@ public class CloneSpawner : MonoBehaviour
     {
         if (!CloneActive || currentClone == null) return false;
 
-        ReturnCameraToPlayer();
         energyController.UnregisterClone(currentClone);
-        Destroy(currentClone);
+        StartCoroutine(DespawnSequence(currentClone));
         currentClone = null;
         CloneActive = false;
         return true;
+    }
+
+    private IEnumerator DespawnSequence(GameObject clone)
+    {
+        Transform destroyFX = clone.transform.Find("Effects/Destroy");
+        if (destroyFX != null)
+        {
+            destroyFX.SetParent(null);
+            ParticleSystem ps = destroyFX.GetComponent<ParticleSystem>();
+            if (ps != null)
+            {
+                ps.Play();
+            }
+        }
+
+        playerCamera.transform.SetParent(null);
+        Destroy(clone);
+
+        yield return new WaitForSeconds(0.25f);
+        ReturnCameraToPlayer();
     }
 
     public void RegisterExternalClone(GameObject clone, bool isSmall)
@@ -93,7 +111,7 @@ public class CloneSpawner : MonoBehaviour
     public GameObject GetCurrentClone() => currentClone;
     public bool GetActiveClone() => CloneActive;
 
-  
+
     private bool CanSpawn()
     {
         if (CloneActive) return false;
@@ -104,7 +122,7 @@ public class CloneSpawner : MonoBehaviour
         return true;
     }
 
-   
+
     private Vector3? ResolveSpawnPosition(bool isBig)
     {
         Vector3 principal = cloneSpawnPointPrincipal.position;
@@ -122,7 +140,7 @@ public class CloneSpawner : MonoBehaviour
         return null;
     }
 
-   
+
     private bool IsSpawnPositionValid(Vector3 targetPosition, Vector2 size, float heightOffset)
     {
         if (IsPathBlocked(transform.position, targetPosition))
@@ -144,7 +162,7 @@ public class CloneSpawner : MonoBehaviour
         soundManager.PlaySFX(soundManager.spawnClon);
     }
 
-   
+
     private bool CheckColisionSpawn()
     {
         return IsPathBlocked(transform.position, cloneSpawnPointPrincipalUp.position);
