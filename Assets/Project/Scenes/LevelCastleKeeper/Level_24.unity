@@ -1240,6 +1240,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342d6971623396448822f2204dd92246, type: 3}
+--- !u!1 &840843258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2618359905373588471, guid: 342d6971623396448822f2204dd92246, type: 3}
+  m_PrefabInstance: {fileID: 840843257}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &858855213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2198,6 +2203,14 @@ PrefabInstance:
       propertyPath: interruptorWall
       value: 
       objectReference: {fileID: 1704774755}
+    - target: {fileID: 2745183913846505310, guid: fea6be751dff1844995bd2fdda42422f, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1952899607}
+    - target: {fileID: 2745183913846505310, guid: fea6be751dff1844995bd2fdda42422f, type: 3}
+      propertyPath: interruptorWall
+      value: 
+      objectReference: {fileID: 840843258}
     - target: {fileID: 3160812762654798232, guid: fea6be751dff1844995bd2fdda42422f, type: 3}
       propertyPath: m_Name
       value: SmallCloneInterruptor
@@ -2570,6 +2583,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 342d6971623396448822f2204dd92246, type: 3}
+--- !u!1 &1437910058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2618359905373588471, guid: 342d6971623396448822f2204dd92246, type: 3}
+  m_PrefabInstance: {fileID: 1437910057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1443546336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3537,7 +3555,7 @@ Tilemap:
       - {fileID: 1891791015, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
       - {fileID: -267842426, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
       - {fileID: -1569539696, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -53, y: 32, z: 0}
@@ -3570,7 +3588,7 @@ Tilemap:
       - {fileID: 1891791015, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
       - {fileID: -267842426, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
       - {fileID: -1569539696, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
-      m_AnimationSpeed: 6
+      m_AnimationSpeed: 6.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -48, y: 33, z: 0}
@@ -3581,7 +3599,7 @@ Tilemap:
       - {fileID: 1891791015, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
       - {fileID: -267842426, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
       - {fileID: -1569539696, guid: 190dc52a85d52894d9c0fcc3261a460c, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -40138,6 +40156,14 @@ PrefabInstance:
       propertyPath: interruptorWall
       value: 
       objectReference: {fileID: 1503056110}
+    - target: {fileID: 2745183913846505310, guid: fea6be751dff1844995bd2fdda42422f, type: 3}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1952899607}
+    - target: {fileID: 2745183913846505310, guid: fea6be751dff1844995bd2fdda42422f, type: 3}
+      propertyPath: interruptorWall
+      value: 
+      objectReference: {fileID: 1437910058}
     - target: {fileID: 3160812762654798232, guid: fea6be751dff1844995bd2fdda42422f, type: 3}
       propertyPath: m_Name
       value: SmallCloneInterruptor
