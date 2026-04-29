@@ -30837,7 +30837,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 2070252230, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
       - {fileID: 2054123824, guid: 48a7e8dda5f91984cb5948827a050c83, type: 3}
-      m_AnimationSpeed: 6.0000005
+      m_AnimationSpeed: 6
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -44, y: 3, z: 0}
@@ -31541,7 +31541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7493588699524784817, guid: fea6be751dff1844995bd2fdda42422f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22
+      value: 0.512
       objectReference: {fileID: 0}
     - target: {fileID: 7493588699524784817, guid: fea6be751dff1844995bd2fdda42422f, type: 3}
       propertyPath: m_LocalPosition.z

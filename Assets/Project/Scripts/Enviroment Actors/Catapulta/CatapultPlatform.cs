@@ -17,17 +17,16 @@ public class CatapultPlatform : MonoBehaviour
     private Vector3 originalPosition;
     private Vector3 targetPosition;
     private bool isPressed = false;
+    private bool bigCloneOnPlatform = false; 
     private AudioSource audioSource;
 
     private void Awake()
     {
         originalPosition = transform.position;
         targetPosition = originalPosition;
-
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null && impactSound != null)
             audioSource = gameObject.AddComponent<AudioSource>();
-
         if (catapultSystem == null)
             catapultSystem = FindFirstObjectByType<CatapultSystem>();
     }
@@ -40,45 +39,53 @@ public class CatapultPlatform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("BigClone")) return;
-        if (isPressed) return;
+
+        bigCloneOnPlatform = true;
+
+        if (isPressed) return; 
 
         ActivateCatapult();
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("BigClone")) return;
+
+        bigCloneOnPlatform = false;
+        isPressed = false; 
     }
 
     private void ActivateCatapult()
     {
         isPressed = true;
         targetPosition = originalPosition - Vector3.up * pressedOffset;
-
         PlayEffects();
 
         if (catapultSystem != null)
             catapultSystem.OnCatapultActivated(0f);
 
-        Invoke(nameof(ResetPlatform), resetDelay);
+        Invoke(nameof(ResetVisual), resetDelay); 
     }
 
-    private void ResetPlatform()
+    private void ResetVisual()
     {
         targetPosition = originalPosition;
-        isPressed = false;
     }
 
     private void PlayEffects()
     {
         if (impactEffect != null)
             Instantiate(impactEffect, transform.position, Quaternion.identity);
-
         if (audioSource != null && impactSound != null)
             audioSource.PlayOneShot(impactSound);
     }
 
     public void ForceReset()
     {
-        CancelInvoke(nameof(ResetPlatform));
+        CancelInvoke(nameof(ResetVisual));
         targetPosition = originalPosition;
-        isPressed = false;
         transform.position = originalPosition;
+        isPressed = false;
+        bigCloneOnPlatform = false;
     }
 
     private void OnDrawGizmosSelected()
