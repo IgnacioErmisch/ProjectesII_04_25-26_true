@@ -98,19 +98,21 @@ public class CloneSpawner : MonoBehaviour
         {
             destroyFX.SetParent(null);
             ParticleSystem ps = destroyFX.GetComponent<ParticleSystem>();
-            if (ps != null)
-            {
-                ps.Play();
-            }
+            if (ps != null) ps.Play();
         }
 
-        playerCamera.transform.SetParent(null);
+        bool cameraWasOnThisClone = playerCamera.transform.parent == clone.transform;
+        if (cameraWasOnThisClone)
+            playerCamera.transform.SetParent(null);
+
         Destroy(clone);
-
         yield return new WaitForSeconds(0.15f);
-        ReturnCameraToPlayer();
-    }
 
+        if (cameraWasOnThisClone && playerCamera.transform.parent == null)
+            ReturnCameraToPlayer();
+
+        
+    }
     public void RegisterExternalClone(GameObject clone, bool isSmall)
     {
         currentClone = clone;
