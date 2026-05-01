@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip movementBC;
     public AudioClip movementP;
     public AudioClip despawnClone;
+    public AudioClip energyClone;
     public AudioClip bigCloneAttack;
     public AudioClip redAttack;
     public AudioClip blueAttack;
@@ -134,8 +135,10 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, bool noInterrupt = false)
     {
+        if (noInterrupt && sfxSource.clip == clip && sfxSource.isPlaying) return;
+        sfxSource.clip = clip;
         sfxSource.PlayOneShot(clip);
     }
 
