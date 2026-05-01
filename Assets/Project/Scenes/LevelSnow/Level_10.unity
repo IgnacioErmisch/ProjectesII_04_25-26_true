@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8595657342753811760, guid: cc0f799ee1409544b85bbf8b032f672c, type: 3}
+      propertyPath: m_Constraints
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7176,6 +7180,14 @@ PrefabInstance:
     - target: {fileID: 1020557257984141705, guid: 336acd88a49507a46a883101ae481446, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2976098889197906243, guid: 336acd88a49507a46a883101ae481446, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2976098889197906243, guid: 336acd88a49507a46a883101ae481446, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 3258225330916925630, guid: 336acd88a49507a46a883101ae481446, type: 3}
       propertyPath: parallaxSpeed

@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2976098889197906243, guid: 336acd88a49507a46a883101ae481446, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.27
+      objectReference: {fileID: 0}
     - target: {fileID: 3258225330916925630, guid: 336acd88a49507a46a883101ae481446, type: 3}
       propertyPath: parallaxSpeed
       value: 0.0373
