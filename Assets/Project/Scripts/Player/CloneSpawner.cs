@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Cinemachine;
 
 public class CloneSpawner : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class CloneSpawner : MonoBehaviour
 
     [Header("Camera")]
     public Camera playerCamera;
+    [SerializeField] private CinemachineImpulseSource impulseSource;
 
     private Vector2 SmallCloneSize = new Vector2(0.5f, 0.5f);
     private Vector2 BigCloneSize = new Vector2(0.8f, 1.6f);
@@ -59,11 +61,21 @@ public class CloneSpawner : MonoBehaviour
         bool isBig = switchInterface.IsBigCloneSelected;
 
         if (isBig && (CheckColisionSpawn()))
+        {
+            soundManager.PlaySFX(soundManager.despawnClone, noInterrupt: true);
+            ShakeCamera();
             return false;
+        }
+
 
         Vector3? spawnPosition = ResolveSpawnPosition(isBig);
-        if (spawnPosition == null) return false;
-
+        if (spawnPosition == null)
+        {
+            soundManager.PlaySFX(soundManager.despawnClone, noInterrupt: true);
+            ShakeCamera();
+            return false;
+        }
+         
         SpawnClone(isBig, spawnPosition.Value);
         return true;
     }
@@ -95,7 +107,7 @@ public class CloneSpawner : MonoBehaviour
         playerCamera.transform.SetParent(null);
         Destroy(clone);
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.15f);
         ReturnCameraToPlayer();
     }
 
@@ -190,7 +202,10 @@ public class CloneSpawner : MonoBehaviour
         playerCamera.transform.localPosition = CameraLocalPositionPlayer;
         perspectiveSwitch.SwitchToPlayer();
     }
-
+    private void ShakeCamera()
+    {
+        impulseSource.GenerateImpulse(0.05f); 
+    }
     private void DrawSpawnGizmo(Transform spawnPoint)
     {
         if (spawnPoint == null) return;

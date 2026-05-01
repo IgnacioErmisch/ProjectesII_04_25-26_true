@@ -131,7 +131,7 @@ public class EnergyController : MonoBehaviour
         else if (currentEnergy <= 0)
         {
             cloneSpawner.TryDespawnClone();
-            soundManager.PlaySFX(soundManager.despawnClone);
+            soundManager.PlaySFX(soundManager.energyClone);
         }
     }
     private void StartRegeneration()
