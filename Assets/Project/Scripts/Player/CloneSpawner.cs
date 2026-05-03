@@ -128,7 +128,7 @@ public class CloneSpawner : MonoBehaviour
 
     private bool CanSpawn()
     {
-        if (CloneActive) return false;
+        if (CloneActive || Time.timeScale <= 0f) return false;
 
         foreach (var spawner in otherSpawners)
             if (spawner.CloneActive) return false;
