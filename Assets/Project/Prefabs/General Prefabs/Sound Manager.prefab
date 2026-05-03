@@ -318,7 +318,8 @@ MonoBehaviour:
   movementSC: {fileID: 0}
   movementBC: {fileID: 0}
   movementP: {fileID: 0}
-  despawnClone: {fileID: 8300000, guid: bb6a8d9bc25ad9841a92b2df9c9401d8, type: 3}
+  despawnClone: {fileID: 8300000, guid: f658a20392c337847a73845d1cde2f09, type: 3}
+  energyClone: {fileID: 8300000, guid: a8015800954848543ba52dd11d8cd556, type: 3}
   bigCloneAttack: {fileID: 8300000, guid: 9c4cc62bba2e7534183ab3714129495a, type: 3}
   redAttack: {fileID: 8300000, guid: d7583f082a5e8c142828cdf730aa60eb, type: 3}
   blueAttack: {fileID: 8300000, guid: c74441e284b191941af86e36d1bb5739, type: 3}

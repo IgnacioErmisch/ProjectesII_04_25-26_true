@@ -119,6 +119,10 @@ MonoBehaviour:
     m_Localized: Creditos
     m_Metadata:
       m_Items: []
+  - m_Id: 7272504075218944
+    m_Localized: Mantener
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

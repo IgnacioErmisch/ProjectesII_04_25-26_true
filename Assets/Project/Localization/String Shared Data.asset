@@ -129,6 +129,12 @@ MonoBehaviour:
     m_Key: menu.Credits
     m_Metadata:
       m_Items: []
+  - m_Id: 7272504075218944
+    m_Key: 'level1.hold
+
+'
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
