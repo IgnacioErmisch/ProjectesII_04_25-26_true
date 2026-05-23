@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: ca
   m_SharedData: {fileID: 11400000, guid: 599a3f796e20b2b4e8a8c7ca0cffc36d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 2032621501454483541
   m_TableData:
   - m_Id: 1723083517952
     m_Localized: Jugar
@@ -78,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 656940435238912
-    m_Localized: Canvia la perspectiva de la camera
+    m_Localized: Canviar de personatge
     m_Metadata:
       m_Items: []
   - m_Id: 659452475207680
@@ -125,6 +126,17 @@ MonoBehaviour:
     m_Localized: Mantenir
     m_Metadata:
       m_Items: []
+  - m_Id: 15233586777550848
+    m_Localized: "Recomanem jugar amb el controlador per a una millor experi\xE8ncia"
+    m_Metadata:
+      m_Items:
+      - rid: 2032621501454483541
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2032621501454483541
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 15233586777550848

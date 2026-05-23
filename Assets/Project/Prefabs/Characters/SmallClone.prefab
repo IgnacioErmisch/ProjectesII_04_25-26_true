@@ -209,7 +209,7 @@ MonoBehaviour:
     m_Bits: 64
   edgeCheckFront: {fileID: 0}
   edgeCheckBack: {fileID: 0}
-  jumpForce: 13
+  jumpForce: 13.25
   secondJumpForce: 11.5
   jumpMultiplier: 1
   maxJumps: 2

@@ -159,11 +159,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 11.5
   secondJumpForce: 10.5
-  minJumpForce: 7
+  minJumpForce: 0.5
   maxJumps: 2
   normalGravityScale: 2.5
   fallGravityMultiplier: 3
-  lowJumpMultiplier: 3
+  lowJumpMultiplier: 1
   maxFallSpeed: 20
   coyoteTime: 0.5
   jumpBufferTime: 0.2
@@ -646,7 +646,7 @@ Transform:
   m_GameObject: {fileID: 2789915080622717676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -141.29001, y: -19.630001, z: -10}
+  m_LocalPosition: {x: -156.01001, y: -32.65, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5884,10 +5884,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5217957864929364863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.23446135, y: 0}
-  m_AnchorMax: {x: 0.72316986, y: 0.86}
-  m_AnchoredPosition: {x: 3.28479, y: -7.939575}
-  m_SizeDelta: {x: -17.606245, y: -15.979082}
+  m_AnchorMin: {x: 0.26000002, y: 0}
+  m_AnchorMax: {x: 0.7344758, y: 0.804}
+  m_AnchoredPosition: {x: 5.42276, y: -0.000061035156}
+  m_SizeDelta: {x: -2.7, y: -0.0010986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4589047907345811101
 CanvasRenderer:
@@ -5924,7 +5924,7 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 0
-  m_FillOrigin: 2
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &1719142504444927671

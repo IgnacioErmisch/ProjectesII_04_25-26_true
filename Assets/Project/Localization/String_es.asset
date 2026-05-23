@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: es
   m_SharedData: {fileID: 11400000, guid: 599a3f796e20b2b4e8a8c7ca0cffc36d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 2032621501454483540
   m_TableData:
   - m_Id: 1723083517952
     m_Localized: Jugar
@@ -77,7 +78,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 656940435238912
-    m_Localized: Cambiar la perspectiva de la camara
+    m_Localized: Cambiar de personaje
     m_Metadata:
       m_Items: []
   - m_Id: 659452475207680
@@ -123,6 +124,17 @@ MonoBehaviour:
     m_Localized: Mantener
     m_Metadata:
       m_Items: []
+  - m_Id: 15233586777550848
+    m_Localized: Recomendamos jugar con mando para una mejor experiencia
+    m_Metadata:
+      m_Items:
+      - rid: 2032621501454483540
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2032621501454483540
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 15233586777550848
