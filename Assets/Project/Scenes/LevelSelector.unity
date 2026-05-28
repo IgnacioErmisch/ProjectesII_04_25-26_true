@@ -2450,6 +2450,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 402656805}
   m_SourcePrefab: {fileID: 100100000, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+--- !u!114 &402656802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+  m_PrefabInstance: {fileID: 402656801}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402656803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &402656803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6533829635664477279, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
@@ -3325,6 +3336,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 871973530}
     m_Modifications:
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.40392157
       objectReference: {fileID: 0}
@@ -3336,6 +3351,18 @@ PrefabInstance:
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.40392157
       objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 80646675}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 1159665231}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 1919572022}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
@@ -3467,6 +3494,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 0}
+--- !u!114 &587940635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+  m_PrefabInstance: {fileID: 587940631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587940633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &597289319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6533829635664477279, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
@@ -4295,6 +4333,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 871973530}
     m_Modifications:
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.40392157
       objectReference: {fileID: 0}
@@ -4306,6 +4348,18 @@ PrefabInstance:
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.40392157
       objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 80646675}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 1595803552}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 1159665231}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
@@ -4437,6 +4491,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 0}
+--- !u!114 &844909283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+  m_PrefabInstance: {fileID: 844909279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844909281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &846123645 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5666799863403479378, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
@@ -5148,6 +5213,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 871973530}
     m_Modifications:
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.40392157
       objectReference: {fileID: 0}
@@ -5159,6 +5228,18 @@ PrefabInstance:
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.40392157
       objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 80646675}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 844909283}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 587940635}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
@@ -5290,6 +5371,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 0}
+--- !u!114 &1159665231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+  m_PrefabInstance: {fileID: 1159665227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159665229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1174226882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5944,7 +6036,7 @@ PrefabInstance:
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
-      objectReference: {fileID: 582532457}
+      objectReference: {fileID: 1748192774}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
@@ -6094,6 +6186,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 871973530}
     m_Modifications:
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.40392157
       objectReference: {fileID: 0}
@@ -6105,6 +6201,18 @@ PrefabInstance:
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.40392157
       objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 80646675}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 402656802}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 844909283}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
@@ -6464,7 +6572,7 @@ PrefabInstance:
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Navigation.m_SelectOnLeft
       value: 
-      objectReference: {fileID: 810587481}
+      objectReference: {fileID: 1514351790}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
@@ -6603,6 +6711,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 0}
+--- !u!114 &1748192774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+  m_PrefabInstance: {fileID: 1748192770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748192772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1795431607 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5666799863403479378, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
@@ -6817,6 +6936,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 871973530}
     m_Modifications:
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.40392157
       objectReference: {fileID: 0}
@@ -6828,6 +6951,18 @@ PrefabInstance:
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.40392157
       objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 80646675}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 587940635}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 1925353498}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
@@ -6959,6 +7094,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 0}
+--- !u!114 &1919572022 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+  m_PrefabInstance: {fileID: 1919572018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919572020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1925353494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6967,6 +7113,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 871973530}
     m_Modifications:
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.40392157
@@ -6979,6 +7129,18 @@ PrefabInstance:
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.40392157
       objectReference: {fileID: 0}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 80646675}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 1919572022}
+    - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 402656802}
     - target: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
@@ -7110,6 +7272,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 0}
+--- !u!114 &1925353498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1367920252792810244, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
+  m_PrefabInstance: {fileID: 1925353494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925353496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1926149715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7623,8 +7796,11 @@ MonoBehaviour:
   botonSettings: {fileID: 0}
   botonPlay: {fileID: 0}
   sfx: {fileID: 0}
+  exitCredit: {fileID: 0}
+  buttonCredits: {fileID: 0}
   musicSlider: {fileID: 0}
   sfxSlider: {fileID: 0}
+  panelCredits: {fileID: 0}
 --- !u!1 &2016560922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6533829635664477279, guid: f04bc68ffee01ad479e4139a5a9970c1, type: 3}
